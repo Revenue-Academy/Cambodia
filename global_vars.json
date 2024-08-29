@@ -80,7 +80,7 @@
   ],
   "cit_distribution_table": 0,
   "pit_adjust_behavior": 0,
-  "cit_adjust_behavior": 1,
+  "cit_adjust_behavior": 0,
   "vat_adjust_behavior": 0,
   "sst_adjust_behavior": 0,
   "tot_adjust_behavior": 0,

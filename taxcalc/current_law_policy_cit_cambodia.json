@@ -1,163 +1,11 @@
 {
-    "_TO_thd1": {
-        "long_name": "Turnover threshold1",
-        "description": "Turnover threshold to categorize companies by size",
-        "itr_ref": "Tax Law",
-        "notes": "",
-        "row_var": "Year",
-        "row_label": [
-            "2022"
-        ],
-        "start_year": 2022,
-        "cpi_inflatable": false,
-        "cpi_inflated": false,
-        "col_var": "Value",
-        "col_label": ["Value"],
-        "boolean_value": false,
-        "integer_value": false,
-        "value": [4e+9],
-        "range": {
-            "min": 0.0,
-            "max": 1e+99
-        },
-        "out_of_range_minmsg": "",
-        "out_of_range_maxmsg": "",
-        "out_of_range_action": "stop"
-    },
-    "_TO_thd2": {
-        "long_name": "Turnover threshold2",
-        "description": "Turnover threshold to categorize companies by size",
-        "itr_ref": "Tax Law",
-        "notes": "",
-        "row_var": "Year",
-        "row_label": [
-            "2022"
-        ],
-        "start_year": 2022,
-        "cpi_inflatable": false,
-        "cpi_inflated": false,
-        "col_var": "Value",
-        "col_label": ["Value"],
-        "boolean_value": false,
-        "integer_value": false,
-        "value": [1e+9],
-        "range": {
-            "min": 0.0,
-            "max": 1e+99
-        },
-        "out_of_range_minmsg": "",
-        "out_of_range_maxmsg": "",
-        "out_of_range_action": "stop"
-    },
-      "_TO_thd3": {
-        "long_name": "Turnover threshold3",
-        "description": "Turnover threshold to categorize companies by size",
-        "itr_ref": "Tax Law",
-        "notes": "",
-        "row_var": "Year",
-        "row_label": [
-            "2022"
-        ],
-        "start_year": 2022,
-        "cpi_inflatable": false,
-        "cpi_inflated": false,
-        "col_var": "Value",
-        "col_label": ["Value"],
-        "boolean_value": false,
-        "integer_value": false,
-        "value": [6e+9],
-        "range": {
-            "min": 0.0,
-            "max": 1e+99
-        },
-        "out_of_range_minmsg": "",
-        "out_of_range_maxmsg": "",
-        "out_of_range_action": "stop"
-    },
-    "_TO_thd4": {
-        "long_name": "Turnover threshold3",
-        "description": "Turnover threshold to categorize companies by size",
-        "itr_ref": "Tax Law",
-        "notes": "",
-        "row_var": "Year",
-        "row_label": [
-            "2022"
-        ],
-        "start_year": 2022,
-        "cpi_inflatable": false,
-        "cpi_inflated": false,
-        "col_var": "Value",
-        "col_label": ["Value"],
-        "boolean_value": false,
-        "integer_value": false,
-        "value": [8e+9],
-        "range": {
-            "min": 0.0,
-            "max": 1e+99
-        },
-        "out_of_range_minmsg": "",
-        "out_of_range_maxmsg": "",
-        "out_of_range_action": "stop"
-    },
-"_TO_thd5": {
-     "long_name": "Turnover threshold3",
-     "description": "Turnover threshold to categorize companies by size",
-     "itr_ref": "Tax Law",
-     "notes": "",
-     "row_var": "Year",
-     "row_label": [
-         "2022"
-     ],
-     "start_year": 2022,
-     "cpi_inflatable": false,
-     "cpi_inflated": false,
-     "col_var": "Value",
-     "col_label": ["Value"],
-     "boolean_value": false,
-     "integer_value": false,
-     "value": [1.6e+9],
-     "range": {
-         "min": 0.0,
-         "max": 1e+99
-     },
-     "out_of_range_minmsg": "",
-     "out_of_range_maxmsg": "",
-     "out_of_range_action": "stop"
- },
-"_Asset_thd1": {
-      "long_name": "Asset threshold1",
-      "description": "Asset threshold to categorize companies by size",
-      "itr_ref": "Tax Law",
-      "notes": "",
-      "row_var": "Year",
-      "row_label": [
-          "2022"
-      ],
-      "start_year": 2022,
-      "cpi_inflatable": false,
-      "cpi_inflated": false,
-      "col_var": "Value",
-      "col_label": ["Value"],
-      "boolean_value": false,
-      "integer_value": false,
-      "value": [2e+9],
-      "range": {
-          "min": 0.0,
-          "max": 1e+99
-      },
-      "out_of_range_minmsg": "",
-      "out_of_range_maxmsg": "",
-      "out_of_range_action": "stop"
-  },
-"_Asset_thd2": {
-    "long_name": "Asset threshold2",
-    "description": "Asset threshold to categorize companies by size",
+  "_TO_thd1": {
+    "long_name": "Turnover threshold1",
+    "description": "Turnover threshold to categorize companies by size",
     "itr_ref": "Tax Law",
     "notes": "",
     "row_var": "Year",
-    "row_label": [
-        "2022"
-    ],
+    "row_label": ["2022"],
     "start_year": 2022,
     "cpi_inflatable": false,
     "cpi_inflated": false,
@@ -165,223 +13,368 @@
     "col_label": ["Value"],
     "boolean_value": false,
     "integer_value": false,
-    "value": [1e+9],
+    "value": [4e9],
     "range": {
-        "min": 0.0,
-        "max": 1e+99
+      "min": 0.0,
+      "max": 1e99
     },
     "out_of_range_minmsg": "",
     "out_of_range_maxmsg": "",
     "out_of_range_action": "stop"
-},
-"_Asset_thd3": {
-      "long_name": "Asset threshold3",
-      "description": "Asset threshold to categorize companies by size",
-      "itr_ref": "Tax Law",
-      "notes": "",
-      "row_var": "Year",
-      "row_label": [
-          "2022"
-      ],
-      "start_year": 2022,
-      "cpi_inflatable": false,
-      "cpi_inflated": false,
-      "col_var": "Value",
-      "col_label": ["Value"],
-      "boolean_value": false,
-      "integer_value": false,
-      "value": [4e+9],
-      "range": {
-          "min": 0.0,
-          "max": 1e+99
-      },
-      "out_of_range_minmsg": "",
-      "out_of_range_maxmsg": "",
-      "out_of_range_action": "stop"
   },
-"_depr_rate": {
-        "long_name": "Depreciation Rate",
-        "description": "Depreciation rate as per tax law",
-        "itr_ref": "Tax Law",
-        "notes": "",
-        "row_var": "Year",
-        "row_label": [
-            "2022"
-        ],
-        "start_year": 2022,
-        "cpi_inflatable": false,
-        "cpi_inflated": false,
-        "col_var": "Value",
-        "col_label": ["Value"],
-        "boolean_value": false,
-        "integer_value": false,
-        "value": [0.27],
-        "range": {
-            "min": 0.0,
-            "max": 1.0
-        },
-        "out_of_range_minmsg": "",
-        "out_of_range_maxmsg": "",
-        "out_of_range_action": "stop"
-},
-"_spl_depr_rate": {
-        "long_name": "Special depreciation Rate",
-        "description": "Special Depreciation rate as per tax law",
-        "itr_ref": "Tax Law",
-        "notes": "",
-        "row_var": "Year",
-        "row_label": [
-            "2022"
-        ],
-        "start_year": 2022,
-        "cpi_inflatable": false,
-        "cpi_inflated": false,
-        "col_var": "Value",
-        "col_label": ["Value"],
-        "boolean_value": false,
-        "integer_value": false,
-        "value": [0.4],
-        "range": {
-            "min": 0.0,
-            "max": 1.0
-        },
-        "out_of_range_minmsg": "",
-        "out_of_range_maxmsg": "",
-        "out_of_range_action": "stop"
+  "_TO_thd2": {
+    "long_name": "Turnover threshold2",
+    "description": "Turnover threshold to categorize companies by size",
+    "itr_ref": "Tax Law",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "Value",
+    "col_label": ["Value"],
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [1e9],
+    "range": {
+      "min": 0.0,
+      "max": 1e99
     },
-   
-"_rate_ded_charity": {
-        "long_name": "Rate at which charitable contributions are capped as percentage of adjusted profit ",
-        "description": "Rate to calculate maximum allowable charitable expenses",
-        "itr_ref": "Tax Law",
-        "notes": "",
-        "row_var": "Year",
-        "row_label": [
-            "2022"
-        ],
-        "start_year": 2022,
-        "cpi_inflatable": false,
-        "cpi_inflated": false,
-        "col_var": "Value",
-        "col_label": ["Value"],
-        "boolean_value": false,
-        "integer_value": false,
-        "value": [0.05],
-        "range": {
-            "min": 0.0,
-            "max": 1.0
-        },
-        "out_of_range_minmsg": "",
-        "out_of_range_maxmsg": "",
-        "out_of_range_action": "stop"
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  },
+  "_TO_thd3": {
+    "long_name": "Turnover threshold3",
+    "description": "Turnover threshold to categorize companies by size",
+    "itr_ref": "Tax Law",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "Value",
+    "col_label": ["Value"],
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [6e9],
+    "range": {
+      "min": 0.0,
+      "max": 1e99
     },
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  },
+  "_TO_thd4": {
+    "long_name": "Turnover threshold3",
+    "description": "Turnover threshold to categorize companies by size",
+    "itr_ref": "Tax Law",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "Value",
+    "col_label": ["Value"],
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [8e9],
+    "range": {
+      "min": 0.0,
+      "max": 1e99
+    },
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  },
+  "_TO_thd5": {
+    "long_name": "Turnover threshold3",
+    "description": "Turnover threshold to categorize companies by size",
+    "itr_ref": "Tax Law",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "Value",
+    "col_label": ["Value"],
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [1.6e9],
+    "range": {
+      "min": 0.0,
+      "max": 1e99
+    },
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  },
+  "_Asset_thd1": {
+    "long_name": "Asset threshold1",
+    "description": "Asset threshold to categorize companies by size",
+    "itr_ref": "Tax Law",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "Value",
+    "col_label": ["Value"],
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [2e9],
+    "range": {
+      "min": 0.0,
+      "max": 1e99
+    },
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  },
+  "_Asset_thd2": {
+    "long_name": "Asset threshold2",
+    "description": "Asset threshold to categorize companies by size",
+    "itr_ref": "Tax Law",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "Value",
+    "col_label": ["Value"],
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [1e9],
+    "range": {
+      "min": 0.0,
+      "max": 1e99
+    },
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  },
+  "_Asset_thd3": {
+    "long_name": "Asset threshold3",
+    "description": "Asset threshold to categorize companies by size",
+    "itr_ref": "Tax Law",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "Value",
+    "col_label": ["Value"],
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [4e9],
+    "range": {
+      "min": 0.0,
+      "max": 1e99
+    },
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  },
+  "_depr_rate": {
+    "long_name": "Depreciation Rate",
+    "description": "Depreciation rate as per tax law",
+    "itr_ref": "Tax Law",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "Value",
+    "col_label": ["Value"],
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [0.27],
+    "range": {
+      "min": 0.0,
+      "max": 1.0
+    },
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  },
+  "_spl_depr_rate": {
+    "long_name": "Special depreciation Rate",
+    "description": "Special Depreciation rate as per tax law",
+    "itr_ref": "Tax Law",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "Value",
+    "col_label": ["Value"],
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [0.4],
+    "range": {
+      "min": 0.0,
+      "max": 1.0
+    },
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  },
+
+  "_rate_ded_charity": {
+    "long_name": "Rate at which charitable contributions are capped as percentage of adjusted profit ",
+    "description": "Rate to calculate maximum allowable charitable expenses",
+    "itr_ref": "Tax Law",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "Value",
+    "col_label": ["Value"],
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [0.05],
+    "range": {
+      "min": 0.0,
+      "max": 1.0
+    },
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  },
+  "_rate_ded_dividend": {
+    "long_name": "Rate at which is allowed to deduct from adjusted profit ",
+    "description": "Rate to calculate deduction from dividend",
+    "itr_ref": "Tax Law",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "Value",
+    "col_label": ["Value"],
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [0.5],
+    "range": {
+      "min": 0.0,
+      "max": 1.0
+    },
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  },
   "_rate_int_ded": {
-        "long_name": "Rate at which interest expenses are allowed as percentage of non-interest income ",
-        "description": "Rate to calculate maximum allowable interest expenses",
-        "itr_ref": "Tax Law",
-        "notes": "",
-        "row_var": "Year",
-        "row_label": [
-            "2022"
-        ],
-        "start_year": 2022,
-        "cpi_inflatable": false,
-        "cpi_inflated": false,
-        "col_var": "Value",
-        "col_label": ["Value"],
-        "boolean_value": false,
-        "integer_value": false,
-        "value": [0.5],
-        "range": {
-            "min": 0.0,
-            "max": 1.0
-        },
-        "out_of_range_minmsg": "",
-        "out_of_range_maxmsg": "",
-        "out_of_range_action": "stop"
+    "long_name": "Rate at which interest expenses are allowed as percentage of non-interest income ",
+    "description": "Rate to calculate maximum allowable interest expenses",
+    "itr_ref": "Tax Law",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "Value",
+    "col_label": ["Value"],
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [0.5],
+    "range": {
+      "min": 0.0,
+      "max": 1.0
     },
- "_loss_cf_limit": {
-     "long_name": "Loss carryforward limit (years)",
-     "description": "Number of years for loss carryforward",
-     "itr_ref": "Tax Law",
-     "notes": "",
-     "row_var": "Year",
-     "row_label": ["2022"],
-     "start_year": 2022,
-     "cpi_inflatable": false,
-     "cpi_inflated": false,
-     "col_var": "Value",
-     "col_label": ["Value"],
-     "boolean_value": false,
-     "integer_value": false,
-     "value": [5],
-     "range": {
-         "min": 0,
-         "max": 10
-     },
-     "out_of_range_minmsg": "",
-     "out_of_range_maxmsg": "",
-     "out_of_range_action": "stop"
- },
-   "_mintax_rate": {
-          "long_name": "Minimum Tax Rate for taxpayers who do not maintain books",
-          "description": "Minimum Tax rate",
-          "itr_ref": "Tax Law",
-          "notes": "",
-          "row_var": "Year",
-          "row_label": [
-              "2022"
-          ],
-          "start_year": 2022,
-          "cpi_inflatable": false,
-          "cpi_inflated": false,
-          "col_var": "Value",
-          "col_label": ["Value"],
-          "boolean_value": false,
-          "integer_value": false,
-          "value": [0.01],
-          "range": {
-              "min": 0.0,
-              "max": 1.0
-          },
-          "out_of_range_minmsg": "",
-          "out_of_range_maxmsg": "",
-          "out_of_range_action": "stop"
-      },
-  "_etax_rate1": {
-      "long_name": "Excess Tax Rate 1",
-      "description": "Exess Tax rate 1",
-      "itr_ref": "Tax Law",
-      "notes": "",
-      "row_var": "Year",
-      "row_label": [
-          "2022"
-      ],
-      "start_year": 2022,
-      "cpi_inflatable": false,
-      "cpi_inflated": false,
-      "col_var": "Value",
-      "col_label": ["Value"],
-      "boolean_value": false,
-      "integer_value": false,
-      "value": [0.1],
-      "range": {
-          "min": 0.0,
-          "max": 1.0
-      },
-      "out_of_range_minmsg": "",
-      "out_of_range_maxmsg": "",
-      "out_of_range_action": "stop"
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
   },
-"_etax_rate2": {
+  "_loss_cf_limit": {
+    "long_name": "Loss carryforward limit (years)",
+    "description": "Number of years for loss carryforward",
+    "itr_ref": "Tax Law",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "Value",
+    "col_label": ["Value"],
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [5],
+    "range": {
+      "min": 0,
+      "max": 10
+    },
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  },
+  "_mintax_rate": {
+    "long_name": "Minimum Tax Rate for taxpayers who do not maintain books",
+    "description": "Minimum Tax rate",
+    "itr_ref": "Tax Law",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "Value",
+    "col_label": ["Value"],
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [0.01],
+    "range": {
+      "min": 0.0,
+      "max": 1.0
+    },
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  },
+  "_etax_rate1": {
+    "long_name": "Excess Tax Rate 1",
+    "description": "Exess Tax rate 1",
+    "itr_ref": "Tax Law",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "Value",
+    "col_label": ["Value"],
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [0.1],
+    "range": {
+      "min": 0.0,
+      "max": 1.0
+    },
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  },
+  "_etax_rate2": {
     "long_name": "Excess Tax Rate 2",
     "description": "Exess Tax rate 2",
     "itr_ref": "Tax Law",
     "notes": "",
     "row_var": "Year",
-    "row_label": [
-        "2022"
-    ],
+    "row_label": ["2022"],
     "start_year": 2022,
     "cpi_inflatable": false,
     "cpi_inflated": false,
@@ -391,651 +384,563 @@
     "integer_value": false,
     "value": [0.2],
     "range": {
-        "min": 0.0,
-        "max": 1.0
+      "min": 0.0,
+      "max": 1.0
     },
     "out_of_range_minmsg": "",
     "out_of_range_maxmsg": "",
     "out_of_range_action": "stop"
-},
-  "_etax_rate3": {
-      "long_name": "Excess Tax Rate 3",
-      "description": "Exess Tax rate 3",
-      "itr_ref": "Tax Law",
-      "notes": "",
-      "row_var": "Year",
-      "row_label": [
-          "2022"
-      ],
-      "start_year": 2022,
-      "cpi_inflatable": false,
-      "cpi_inflated": false,
-      "col_var": "Value",
-      "col_label": ["Value"],
-      "boolean_value": false,
-      "integer_value": false,
-      "value": [0.3],
-      "range": {
-          "min": 0.0,
-          "max": 1.0
-      },
-      "out_of_range_minmsg": "",
-      "out_of_range_maxmsg": "",
-      "out_of_range_action": "stop"
   },
-    "_prop_accum1": {
-        "long_name": "Proportion of accumulated income to expenses - Limit 1",
-        "description": "Proportion of accumulated income to expenses - Limit 1",
-        "itr_ref": "Tax Law",
-        "notes": "",
-        "row_var": "Year",
-        "row_label": [
-            "2022"
-        ],
-        "start_year": 2022,
-        "cpi_inflatable": false,
-        "cpi_inflated": false,
-        "col_var": "Value",
-        "col_label": ["Value"],
-        "boolean_value": false,
-        "integer_value": false,
-        "value": [1.3],
-        "range": {
-            "min": 0.0,
-            "max": 1e+99
-        },
-        "out_of_range_minmsg": "",
-        "out_of_range_maxmsg": "",
-        "out_of_range_action": "stop"
+  "_etax_rate3": {
+    "long_name": "Excess Tax Rate 3",
+    "description": "Exess Tax rate 3",
+    "itr_ref": "Tax Law",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "Value",
+    "col_label": ["Value"],
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [0.3],
+    "range": {
+      "min": 0.0,
+      "max": 1.0
     },
-     "_prop_accum2": {
-         "long_name": "Proportion of accumulated income to expenses - Limit 2",
-         "description": "Proportion of accumulated income to expenses - Limit 2",
-         "itr_ref": "Tax Law",
-         "notes": "",
-         "row_var": "Year",
-         "row_label": [
-             "2022"
-         ],
-         "start_year": 2022,
-         "cpi_inflatable": false,
-         "cpi_inflated": false,
-         "col_var": "Value",
-         "col_label": ["Value"],
-         "boolean_value": false,
-         "integer_value": false,
-         "value": [1.6],
-         "range": {
-             "min": 0.0,
-             "max": 1e+99
-         },
-         "out_of_range_minmsg": "",
-         "out_of_range_maxmsg": "",
-         "out_of_range_action": "stop"
-     },
-      "_prop_accum3": {
-          "long_name": "Proportion of accumulated income to expenses - Limit 3",
-          "description": "Proportion of accumulated income to expenses - Limit 3",
-          "itr_ref": "Tax Law",
-          "notes": "",
-          "row_var": "Year",
-          "row_label": [
-              "2022"
-          ],
-          "start_year": 2022,
-          "cpi_inflatable": false,
-          "cpi_inflated": false,
-          "col_var": "Value",
-          "col_label": ["Value"],
-          "boolean_value": false,
-          "integer_value": false,
-          "value": [2],
-          "range": {
-              "min": 0.0,
-              "max": 1e+99
-          },
-          "out_of_range_minmsg": "",
-          "out_of_range_maxmsg": "",
-          "out_of_range_action": "stop"
-      },
-    "_cit_rate1": {  
-        "long_name": "CIT tax rate 1", 
-        "description": "The lowest tax rate, applied to the portion of taxable income below tax bracket 1.",
-        "itr_ref": "R code",
-        "notes": "",
-        "row_var": "Year",    
-        "row_label": [  
-            "2022"
-        ],
-        "start_year": 2022,
-        "cpi_inflatable": false,
-        "cpi_inflated": false,
-        "col_var": "",
-        "col_label": "",
-        "boolean_value": false,
-        "integer_value": false,
-        "value": [
-            0.0
-        ],
-        "range": {
-            "min": 0,
-            "max": 1 
-        },
-        "out_of_range_minmsg": "",
-        "out_of_range_maxmsg": "",
-        "out_of_range_action": "stop"
-        
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  },
+  "_prop_accum1": {
+    "long_name": "Proportion of accumulated income to expenses - Limit 1",
+    "description": "Proportion of accumulated income to expenses - Limit 1",
+    "itr_ref": "Tax Law",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "Value",
+    "col_label": ["Value"],
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [1.3],
+    "range": {
+      "min": 0.0,
+      "max": 1e99
     },
-    "_tbrk1": {
-        "long_name": "CIT tax bracket 1 (upper threshold)",
-        "description": "Taxable income below this threshold is taxed at tax rate 1.",
-        "itr_ref": "R code",
-        "notes": "",
-        "row_var": "Year",
-        "row_label": [
-            "2022"
-        ],
-        "start_year": 2022,
-        "cpi_inflatable": true,
-        "cpi_inflated": false,
-        "col_var": "",
-        "col_label": [
-        ],
-        "boolean_value": false,
-        "integer_value": false,
-        "value": [
-           18e+6
-        ],
-        "range": {
-            "min": 0,
-            "max": "_tbrk2"
-        },
-        "out_of_range_minmsg": "",
-        "out_of_range_maxmsg": "for _tbrk2",
-        "out_of_range_action": "stop"
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  },
+  "_prop_accum2": {
+    "long_name": "Proportion of accumulated income to expenses - Limit 2",
+    "description": "Proportion of accumulated income to expenses - Limit 2",
+    "itr_ref": "Tax Law",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "Value",
+    "col_label": ["Value"],
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [1.6],
+    "range": {
+      "min": 0.0,
+      "max": 1e99
     },
-    "_cit_rate2": {  
-        "long_name": "CIT tax rate 2", 
-        "description": "Tax rate applied to the portion of taxable income below tax bracket 2.",
-        "itr_ref": "R code",
-        "notes": "",
-        "row_var": "Year",    
-        "row_label": [  
-            "2022"
-        ],
-        "start_year": 2022,
-        "cpi_inflatable": false,
-        "cpi_inflated": false,
-        "col_var": "",
-        "col_label": "",
-        "boolean_value": false,
-        "integer_value": false,
-        "value": [
-            0.05
-        ],
-        "range": {
-            "min": 0,
-            "max": 1 
-        },
-        "out_of_range_minmsg": "",
-        "out_of_range_maxmsg": "",
-        "out_of_range_action": "stop"
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  },
+  "_prop_accum3": {
+    "long_name": "Proportion of accumulated income to expenses - Limit 3",
+    "description": "Proportion of accumulated income to expenses - Limit 3",
+    "itr_ref": "Tax Law",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "Value",
+    "col_label": ["Value"],
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [2],
+    "range": {
+      "min": 0.0,
+      "max": 1e99
     },
-    "_tbrk2": {
-        "long_name": "CIT tax bracket 2 (upper threshold)",
-        "description": "Taxable income below this threshold is taxed at tax rate 2",
-        "itr_ref": "R code",
-        "notes": "",
-        "row_var": "Year",
-        "row_label": [
-            "2022"
-        ],
-        "start_year": 2022,
-        "cpi_inflatable": true,
-        "cpi_inflated": false,
-        "col_var": "",
-        "col_label": [
-        ],
-        "boolean_value": false,
-        "integer_value": false,
-        "value": [
-           24e+6
-        ],
-        "range": {
-            "min": "_tbrk1",
-            "max": "_tbrk3"
-        },
-        "out_of_range_minmsg": "for _tbrk1",
-        "out_of_range_maxmsg": "for _tbrk3",
-        "out_of_range_action": "stop"
-        
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  },
+  "_cit_rate1": {
+    "long_name": "CIT tax rate 1",
+    "description": "The lowest tax rate, applied to the portion of taxable income below tax bracket 1.",
+    "itr_ref": "R code",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "",
+    "col_label": "",
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [0.0],
+    "range": {
+      "min": 0,
+      "max": 1
     },
-    "_cit_rate3": {  
-        "long_name": "CIT tax rate 3", 
-        "description": "Tax rate applied to the portion of taxable income below tax bracket 3",
-        "itr_ref": "R code",
-        "notes": "",
-        "row_var": "Year",    
-        "row_label": [  
-            "2022"
-        ],
-        "start_year": 2022,
-        "cpi_inflatable": false,
-        "cpi_inflated": false,
-        "col_var": "",
-        "col_label": "",
-        "boolean_value": false,
-        "integer_value": false,
-        "value": [
-            0.1
-        ],
-        "range": {
-            "min": 0,
-            "max": 1 
-        },
-        "out_of_range_minmsg": "",
-        "out_of_range_maxmsg": "",
-        "out_of_range_action": "stop"
-        
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  },
+  "_tbrk1": {
+    "long_name": "CIT tax bracket 1 (upper threshold)",
+    "description": "Taxable income below this threshold is taxed at tax rate 1.",
+    "itr_ref": "R code",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": true,
+    "cpi_inflated": false,
+    "col_var": "",
+    "col_label": [],
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [18e6],
+    "range": {
+      "min": 0,
+      "max": "_tbrk2"
     },
-    "_tbrk3": {
-        "long_name": "CIT tax bracket 3 (upper threshold)",
-        "description": "Taxable income below this threshold is taxed at tax rate 3",
-        "itr_ref": "R code",
-        "notes": "",
-        "row_var": "Year",
-        "row_label": [
-            "2022"
-        ],
-        "start_year": 2022,
-        "cpi_inflatable": true,
-        "cpi_inflated": false,
-        "col_var": "",
-        "col_label": [
-        ],
-        "boolean_value": false,
-        "integer_value": false,
-        "value": [
-           102e+6
-        ],
-        "range": {
-            "min": "_tbrk2",
-            "max": "_tbrk4"
-        },
-        "out_of_range_minmsg": "for _tbrk2",
-        "out_of_range_maxmsg": "for _tbrk4",
-        "out_of_range_action": "stop"
-        
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "for _tbrk2",
+    "out_of_range_action": "stop"
+  },
+  "_cit_rate2": {
+    "long_name": "CIT tax rate 2",
+    "description": "Tax rate applied to the portion of taxable income below tax bracket 2.",
+    "itr_ref": "R code",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "",
+    "col_label": "",
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [0.05],
+    "range": {
+      "min": 0,
+      "max": 1
     },
-    "_cit_rate4": {
-        "long_name": "CIT tax rate 4",
-        "description": "Tax rate applied to the portion of taxable income below tax bracket 4 and above tax bracket 3",
-        "itr_ref": "R code",
-        "notes": "",
-        "row_var": "Year",
-        "row_label": [
-            "2022"
-        ],
-        "start_year": 2022,
-        "cpi_inflatable": false,
-        "cpi_inflated": false,
-        "col_var": "",
-        "col_label": "",
-        "boolean_value": false,
-        "integer_value": false,
-        "value": [
-            0.15
-        ],
-        "range": {
-            "min": 0,
-            "max": 1
-        },
-        "out_of_range_minmsg": "",
-        "out_of_range_maxmsg": "",
-        "out_of_range_action": "stop"
-        
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  },
+  "_tbrk2": {
+    "long_name": "CIT tax bracket 2 (upper threshold)",
+    "description": "Taxable income below this threshold is taxed at tax rate 2",
+    "itr_ref": "R code",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": true,
+    "cpi_inflated": false,
+    "col_var": "",
+    "col_label": [],
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [24e6],
+    "range": {
+      "min": "_tbrk1",
+      "max": "_tbrk3"
     },
-    "_tbrk4": {
-        "long_name": "CIT tax bracket 4 (upper threshold)",
-        "description": "Income below this threshold and above tax bracket 3 is taxed at tax rate 4.",
-        "itr_ref": "R code",
-        "notes": "",
-        "row_var": "Year",
-        "row_label": [
-            "2022"
-        ],
-        "start_year": 2022,
-        "cpi_inflatable": true,
-        "cpi_inflated": false,
-        "col_var": "",
-        "col_label": [
-        ],
-        "boolean_value": false,
-        "integer_value": false,
-        "value": [
-                150e+6
-        ],
-        "range": {
-            "min": "_tbrk3",
-            "max": 9e+99
-        },
-        "out_of_range_minmsg": "",
-        "out_of_range_maxmsg": "",
-        "out_of_range_action": "stop"
+    "out_of_range_minmsg": "for _tbrk1",
+    "out_of_range_maxmsg": "for _tbrk3",
+    "out_of_range_action": "stop"
+  },
+  "_cit_rate3": {
+    "long_name": "CIT tax rate 3",
+    "description": "Tax rate applied to the portion of taxable income below tax bracket 3",
+    "itr_ref": "R code",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "",
+    "col_label": "",
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [0.1],
+    "range": {
+      "min": 0,
+      "max": 1
     },
-     "_cit_rate5": {
-         "long_name": "CIT tax rate 5",
-         "description": "Tax rate applied to the portion of taxable income above tax bracket 4",
-         "itr_ref": "R code",
-         "notes": "",
-         "row_var": "Year",
-         "row_label": [
-             "2022"
-         ],
-         "start_year": 2022,
-         "cpi_inflatable": false,
-         "cpi_inflated": false,
-         "col_var": "",
-         "col_label": "",
-         "boolean_value": false,
-         "integer_value": false,
-         "value": [
-             0.2
-         ],
-         "range": {
-             "min": 0,
-             "max": 1
-         },
-         "out_of_range_minmsg": "",
-         "out_of_range_maxmsg": "",
-         "out_of_range_action": "stop"
-         
-     },
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  },
+  "_tbrk3": {
+    "long_name": "CIT tax bracket 3 (upper threshold)",
+    "description": "Taxable income below this threshold is taxed at tax rate 3",
+    "itr_ref": "R code",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": true,
+    "cpi_inflated": false,
+    "col_var": "",
+    "col_label": [],
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [102e6],
+    "range": {
+      "min": "_tbrk2",
+      "max": "_tbrk4"
+    },
+    "out_of_range_minmsg": "for _tbrk2",
+    "out_of_range_maxmsg": "for _tbrk4",
+    "out_of_range_action": "stop"
+  },
+  "_cit_rate4": {
+    "long_name": "CIT tax rate 4",
+    "description": "Tax rate applied to the portion of taxable income below tax bracket 4 and above tax bracket 3",
+    "itr_ref": "R code",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "",
+    "col_label": "",
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [0.15],
+    "range": {
+      "min": 0,
+      "max": 1
+    },
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  },
+  "_tbrk4": {
+    "long_name": "CIT tax bracket 4 (upper threshold)",
+    "description": "Income below this threshold and above tax bracket 3 is taxed at tax rate 4.",
+    "itr_ref": "R code",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": true,
+    "cpi_inflated": false,
+    "col_var": "",
+    "col_label": [],
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [150e6],
+    "range": {
+      "min": "_tbrk3",
+      "max": 9e99
+    },
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  },
+  "_cit_rate5": {
+    "long_name": "CIT tax rate 5",
+    "description": "Tax rate applied to the portion of taxable income above tax bracket 4",
+    "itr_ref": "R code",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "",
+    "col_label": "",
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [0.2],
+    "range": {
+      "min": 0,
+      "max": 1
+    },
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  },
   "_switch_prog": {
-        "long_name": "switch to use standard CIT rate / prog rate for sole prop ",
-        "description": "If switch is 1 rate if progressive; else rate is standard",
-        "itr_ref": "Tax Law",
-        "notes": "",
-        "row_var": "Year",
-        "row_label": [
-            "2022"
-        ],
-        "start_year": 2022,
-        "cpi_inflatable": false,
-        "cpi_inflated": false,
-        "col_var": "Value",
-        "col_label": ["Value"],
-        "boolean_value": false,
-        "integer_value": false,
-        "value": [1],
-        "range": {
-            "min": 0.0,
-            "max": 1.0
-        },
-        "out_of_range_minmsg": "",
-        "out_of_range_maxmsg": "",
-        "out_of_range_action": "stop"
+    "long_name": "switch to use standard CIT rate / prog rate for sole prop ",
+    "description": "If switch is 1 rate if progressive; else rate is standard",
+    "itr_ref": "Tax Law",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "Value",
+    "col_label": ["Value"],
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [1],
+    "range": {
+      "min": 0.0,
+      "max": 1.0
     },
-    "_cit_rate_std": {
-          "long_name": "standard rate at which corporates are taxed",
-          "description": "Corporate Tax rate",
-          "itr_ref": "Tax Law",
-          "notes": "",
-          "row_var": "Year",
-          "row_label": [
-              "2022"
-          ],
-          "start_year": 2022,
-          "cpi_inflatable": false,
-          "cpi_inflated": false,
-          "col_var": "Value",
-          "col_label": ["Value"],
-          "boolean_value": false,
-          "integer_value": false,
-          "value": [0.2],
-          "range": {
-              "min": 0.0,
-              "max": 1.0
-          },
-          "out_of_range_minmsg": "",
-          "out_of_range_maxmsg": "",
-          "out_of_range_action": "stop"
-      },
-    "_cit_rate_std_curr_law": {
-        "long_name": "standard rate at which corporates are taxed under current law",
-        "description": "Corporate Tax rate - current law",
-        "itr_ref": "Tax Law",
-        "notes": "",
-        "row_var": "Year",
-        "row_label": [
-            "2022"
-        ],
-        "start_year": 2022,
-        "cpi_inflatable": false,
-        "cpi_inflated": false,
-        "col_var": "Value",
-        "col_label": ["Value"],
-        "boolean_value": false,
-        "integer_value": false,
-        "value": [0.2],
-        "range": {
-            "min": 0.0,
-            "max": 1.0
-        },
-        "out_of_range_minmsg": "",
-        "out_of_range_maxmsg": "",
-        "out_of_range_action": "stop"
-    },    
-    "_cit_rate_mining": {
-        "long_name": "rate at which corporates in Mining sector are taxed",
-        "description": "Standard Corporate Tax rate",
-        "itr_ref": "Tax Law",
-        "notes": "",
-        "row_var": "Year",
-        "row_label": [
-            "2022"
-        ],
-        "start_year": 2022,
-        "cpi_inflatable": false,
-        "cpi_inflated": false,
-        "col_var": "Value",
-        "col_label": ["Value"],
-        "boolean_value": false,
-        "integer_value": false,
-        "value": [0.3],
-        "range": {
-            "min": 0.0,
-            "max": 1.0
-        },
-        "out_of_range_minmsg": "",
-        "out_of_range_maxmsg": "",
-        "out_of_range_action": "stop"
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  },
+  "_cit_rate_std": {
+    "long_name": "standard rate at which corporates are taxed",
+    "description": "Corporate Tax rate",
+    "itr_ref": "Tax Law",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "Value",
+    "col_label": ["Value"],
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [0.2],
+    "range": {
+      "min": 0.0,
+      "max": 1.0
     },
-    "_cit_rate_mining_curr_law": {
-        "long_name": "rate at which corporates in Mining sector are taxed under current law",
-        "description": "Corporate Tax rate for Mining - current law",
-        "itr_ref": "Tax Law",
-        "notes": "",
-        "row_var": "Year",
-        "row_label": [
-            "2022"
-        ],
-        "start_year": 2022,
-        "cpi_inflatable": false,
-        "cpi_inflated": false,
-        "col_var": "Value",
-        "col_label": ["Value"],
-        "boolean_value": false,
-        "integer_value": false,
-        "value": [0.3],
-        "range": {
-            "min": 0.0,
-            "max": 1.0
-        },
-        "out_of_range_minmsg": "",
-        "out_of_range_maxmsg": "",
-        "out_of_range_action": "stop"
-    },    
-    "_cit_rate_insurance": {
-        "long_name": "rate at which corporates in insurance sector are taxed",
-        "description": "Corporate Tax rate for Insurance",
-        "itr_ref": "Tax Law",
-        "notes": "",
-        "row_var": "Year",
-        "row_label": [
-            "2022"
-        ],
-        "start_year": 2022,
-        "cpi_inflatable": false,
-        "cpi_inflated": false,
-        "col_var": "Value",
-        "col_label": ["Value"],
-        "boolean_value": false,
-        "integer_value": false,
-        "value": [0.05],
-        "range": {
-            "min": 0.0,
-            "max": 1.0
-        },
-        "out_of_range_minmsg": "",
-        "out_of_range_maxmsg": "",
-        "out_of_range_action": "stop"
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  },
+  "_cit_rate_std_curr_law": {
+    "long_name": "standard rate at which corporates are taxed under current law",
+    "description": "Corporate Tax rate - current law",
+    "itr_ref": "Tax Law",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "Value",
+    "col_label": ["Value"],
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [0.2],
+    "range": {
+      "min": 0.0,
+      "max": 1.0
     },
-    "_cit_rate_insurance_curr_law": {
-        "long_name": "rate at which corporates in insurance sector are taxed under current law",
-        "description": "Corporate Tax rate for Insurance - current law ",
-        "itr_ref": "Tax Law",
-        "notes": "",
-        "row_var": "Year",
-        "row_label": [
-            "2022"
-        ],
-        "start_year": 2022,
-        "cpi_inflatable": false,
-        "cpi_inflated": false,
-        "col_var": "Value",
-        "col_label": ["Value"],
-        "boolean_value": false,
-        "integer_value": false,
-        "value": [0.05],
-        "range": {
-            "min": 0.0,
-            "max": 1.0
-        },
-        "out_of_range_minmsg": "",
-        "out_of_range_maxmsg": "",
-        "out_of_range_action": "stop"
-    },    
-    "_cit_rate_qip": {
-        "long_name": "rate at which corporates in QIP are taxed",
-        "description": "Corporate Tax rate - QIP",
-        "itr_ref": "Tax Law",
-        "notes": "",
-        "row_var": "Year",
-        "row_label": [
-            "2022"
-        ],
-        "start_year": 2022,
-        "cpi_inflatable": false,
-        "cpi_inflated": false,
-        "col_var": "Value",
-        "col_label": ["Value"],
-        "boolean_value": false,
-        "integer_value": false,
-        "value": [0.0],
-        "range": {
-            "min": 0.0,
-            "max": 1.0
-        },
-        "out_of_range_minmsg": "",
-        "out_of_range_maxmsg": "",
-        "out_of_range_action": "stop"
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  },
+  "_cit_rate_mining": {
+    "long_name": "rate at which corporates in Mining sector are taxed",
+    "description": "Standard Corporate Tax rate",
+    "itr_ref": "Tax Law",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "Value",
+    "col_label": ["Value"],
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [0.3],
+    "range": {
+      "min": 0.0,
+      "max": 1.0
     },
-    "_cit_rate_qip_curr_law": {
-        "long_name": "rate at which QIP corporates are taxed under current law",
-        "description": "Corporate Tax rate - QIP under current law",
-        "itr_ref": "Tax Law",
-        "notes": "",
-        "row_var": "Year",
-        "row_label": [
-            "2022"
-        ],
-        "start_year": 2022,
-        "cpi_inflatable": false,
-        "cpi_inflated": false,
-        "col_var": "Value",
-        "col_label": ["Value"],
-        "boolean_value": false,
-        "integer_value": false,
-        "value": [0.0],
-        "range": {
-            "min": 0.0,
-            "max": 1.0
-        },
-        "out_of_range_minmsg": "",
-        "out_of_range_maxmsg": "",
-        "out_of_range_action": "stop"
-    },    
- "_elasticity_cit_taxable_income_value": {
-        "long_name": "Elasticity of Taxable Income",
-        "description": "elasticity",
-        "itr_ref": "elasticity",
-        "notes": "",
-        "row_var": "Year",
-        "row_label": [
-                "2022"
-        ],
-        "start_year": 2022,
-        "cpi_inflatable": false,
-        "cpi_inflated": false,
-        "col_var": "Elasticity",
-        "col_label": "",
-        "boolean_value": false,
-        "integer_value": false,
-        "value": [      
-                [0.0,
-                0.0,
-                0.0]
-      ],
-        "range": {
-            "min": 0,
-            "max": 1
-        },
-        "out_of_range_minmsg": "",
-        "out_of_range_maxmsg": "",
-        "out_of_range_action": "stop"
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  },
+  "_cit_rate_mining_curr_law": {
+    "long_name": "rate at which corporates in Mining sector are taxed under current law",
+    "description": "Corporate Tax rate for Mining - current law",
+    "itr_ref": "Tax Law",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "Value",
+    "col_label": ["Value"],
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [0.3],
+    "range": {
+      "min": 0.0,
+      "max": 1.0
     },
-"_elasticity_cit_taxable_income_threshold": {
-        "long_name": "Elasticity of Taxable Income",
-        "description": "elasticity",
-        "itr_ref": "elasticity",
-        "notes": "",
-        "row_var": "Year",
-        "row_label": [
-                "Ten million",
-                "One billion",
-                "Over One billion"
-        ],
-        "start_year": 2022,
-        "cpi_inflatable": false,
-        "cpi_inflated": false,
-        "col_var": "Elasticity",
-        "col_label": "",
-        "boolean_value": false,
-        "integer_value": false,
-        "value": [      
-                [
-                1e+7,
-                1e+9,
-                9e+99
-                ]
-      ],
-        "range": {
-            "min": 0,
-            "max": 9e+99
-        },
-        "out_of_range_minmsg": "",
-        "out_of_range_maxmsg": "",
-        "out_of_range_action": "stop"
-    } 
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  },
+  "_cit_rate_insurance": {
+    "long_name": "rate at which corporates in insurance sector are taxed",
+    "description": "Corporate Tax rate for Insurance",
+    "itr_ref": "Tax Law",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "Value",
+    "col_label": ["Value"],
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [0.05],
+    "range": {
+      "min": 0.0,
+      "max": 1.0
+    },
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  },
+  "_cit_rate_insurance_curr_law": {
+    "long_name": "rate at which corporates in insurance sector are taxed under current law",
+    "description": "Corporate Tax rate for Insurance - current law ",
+    "itr_ref": "Tax Law",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "Value",
+    "col_label": ["Value"],
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [0.05],
+    "range": {
+      "min": 0.0,
+      "max": 1.0
+    },
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  },
+  "_cit_rate_qip": {
+    "long_name": "rate at which corporates in QIP are taxed",
+    "description": "Corporate Tax rate - QIP",
+    "itr_ref": "Tax Law",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "Value",
+    "col_label": ["Value"],
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [0.0],
+    "range": {
+      "min": 0.0,
+      "max": 1.0
+    },
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  },
+  "_cit_rate_qip_curr_law": {
+    "long_name": "rate at which QIP corporates are taxed under current law",
+    "description": "Corporate Tax rate - QIP under current law",
+    "itr_ref": "Tax Law",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "Value",
+    "col_label": ["Value"],
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [0.0],
+    "range": {
+      "min": 0.0,
+      "max": 1.0
+    },
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  },
+  "_elasticity_cit_taxable_income_value": {
+    "long_name": "Elasticity of Taxable Income",
+    "description": "elasticity",
+    "itr_ref": "elasticity",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["2022"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "Elasticity",
+    "col_label": "",
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [[0.0, 0.0, 0.0]],
+    "range": {
+      "min": 0,
+      "max": 1
+    },
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  },
+  "_elasticity_cit_taxable_income_threshold": {
+    "long_name": "Elasticity of Taxable Income",
+    "description": "elasticity",
+    "itr_ref": "elasticity",
+    "notes": "",
+    "row_var": "Year",
+    "row_label": ["Ten million", "One billion", "Over One billion"],
+    "start_year": 2022,
+    "cpi_inflatable": false,
+    "cpi_inflated": false,
+    "col_var": "Elasticity",
+    "col_label": "",
+    "boolean_value": false,
+    "integer_value": false,
+    "value": [[1e7, 1e9, 9e99]],
+    "range": {
+      "min": 0,
+      "max": 9e99
+    },
+    "out_of_range_minmsg": "",
+    "out_of_range_maxmsg": "",
+    "out_of_range_action": "stop"
+  }
 }
