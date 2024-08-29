@@ -293,6 +293,15 @@
       "cross_year": "No",
       "attribute": "No"
     },
+    "rent_inc": {
+      "type": "float",
+      "desc": "Rental income",
+      "form": {
+        "2022": "Field g3 - Form TOI 01"
+      },
+      "cross_year": "No",
+      "attribute": "No"
+    },
       "depr": {
         "type": "float",
         "desc": "Depreciation reported by taxpayer",
