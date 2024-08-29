@@ -220,11 +220,12 @@ Calculation of adjusted profits
 '''
 
 @iterate_jit(nopython=True)
-def Adj_profit(net_accounting_profit, total_additions, total_deductions, total_non_tax_inc, adjusted_profit ):
+def Adj_profit(net_accounting_profit, total_additions, total_deductions, total_non_tax_inc, rent_inc, adjusted_profit ):
     """
     Compute total taxable profits afer adding back non-allowable deductions.
+    --- add "rent_inc" during training.
     """
-    adjusted_profit = net_accounting_profit + total_additions - total_deductions - total_non_tax_inc
+    adjusted_profit = net_accounting_profit + total_additions + rent_inc - total_deductions - total_non_tax_inc
     return adjusted_profit
 
 
@@ -447,6 +448,11 @@ def cit_liability(net_tax_base_behavior, excess_tax, sector, size, Legal_form, Q
     # the portion of TTI that is taxed at normal rates
     if net_tax_base_behavior <= 0:
         citax = 0
+        
+        """
+        citax : progressive rate schedule
+        """
+        
     else:
         if (Legal_form == 1):
            citax = ((cit_rate1 * min(net_tax_base_behavior, tbrk1) + 

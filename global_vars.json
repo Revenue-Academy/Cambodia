@@ -33,19 +33,17 @@
   "pit_display_revenue_table": 1,
   "sst_display_distribution_table_byincome": 0,
   "sst_display_distribution_table_bydecile": 0,
-  "sst_display_revenue_table": 0,
+  "sst_display_revenue_table": 1,
   "tot_display_distribution_table_byincome": 0,
-  "tot_display_distribution_table_bydecile": 1,
-  "tot_display_revenue_table": 0,
+  "tot_display_distribution_table_bydecile": 0,
+  "tot_display_revenue_table": 1,
   "cit_display_distribution_table_byincome": 0,
-  "cit_display_distribution_table_bydecile": 1,
+  "cit_display_distribution_table_bydecile": 0,
   "cit_display_revenue_table": 1,
   "vat_display_distribution_table_byincome": 0,
   "vat_display_distribution_table_bydecile": 0,
   "vat_display_revenue_table": 1,
-  "kakwani_list": [
-    NaN
-  ],
+  "kakwani_list": [],
   "start_year": "2024",
   "end_year": "2027",
   "pit_data_start_year": 2021,
@@ -67,11 +65,7 @@
   "vat_id_var": "id_n",
   "charts_ready": 1,
   "chart_list": [
-    "cit_revenue_projection",
-    "cit_distribution_table",
-    "cit_distribution_table_top1",
-    "cit_distribution_table_income_bins",
-    "cit_etr"
+    "cit_revenue_projection"
   ],
   "show_error_log": 0,
   "verbose": 0,
@@ -84,7 +78,7 @@
   "attribute_vars": [
     "Sector_short"
   ],
-  "cit_distribution_table": 1,
+  "cit_distribution_table": 0,
   "pit_adjust_behavior": 0,
   "cit_adjust_behavior": 0,
   "vat_adjust_behavior": 0,
@@ -101,7 +95,7 @@
   "sst_distribution_table": 0,
   "sst_display_distribution_table": 0,
   "sst_display_distribution_table_by_attribute": 0,
-  "tot_distribution_table": 1,
+  "tot_distribution_table": 0,
   "tot_display_distribution_table": 0,
   "tot_display_distribution_table_by_attribute": 0
 }
