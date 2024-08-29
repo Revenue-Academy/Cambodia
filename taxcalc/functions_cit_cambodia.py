@@ -38,7 +38,7 @@ def Sector(Sector_short, sector):
     
     Sector      Sector name
     1           Agriculture
-    2           Service
+    `           Service
     3           Manufacturing
     4           Mining
     5           Insurance 
@@ -220,11 +220,11 @@ Calculation of adjusted profits
 '''
 
 @iterate_jit(nopython=True)
-def Adj_profit(net_accounting_profit, total_additions, total_deductions, total_non_tax_inc, adjusted_profit ):
+def Adj_profit(net_accounting_profit, total_additions, total_deductions, total_non_tax_inc, rent_inc, adjusted_profit ):
     """
     Compute total taxable profits afer adding back non-allowable deductions.
     """
-    adjusted_profit = net_accounting_profit + total_additions - total_deductions - total_non_tax_inc
+    adjusted_profit = net_accounting_profit + total_additions + rent_inc - total_deductions - total_non_tax_inc
     return adjusted_profit
 
 
