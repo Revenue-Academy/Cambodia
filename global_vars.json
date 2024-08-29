@@ -60,13 +60,11 @@
     "2029": 206471.0,
     "2030": 218838.0
   },
-  "percent_gdp": 0,
+  "percent_gdp": 1,
   "SALARY_VARIABLE": "CPI",
   "vat_id_var": "id_n",
-  "charts_ready": 1,
-  "chart_list": [
-    "cit_revenue_projection"
-  ],
+  "charts_ready": 0,
+  "chart_list": [],
   "show_error_log": 0,
   "verbose": 0,
   "pit": 0,
