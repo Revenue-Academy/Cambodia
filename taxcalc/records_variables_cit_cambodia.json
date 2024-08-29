@@ -293,6 +293,17 @@
       "cross_year": "No",
       "attribute": "No"
     },
+
+     "rent_inc": {
+       "type": "float",
+       "desc": "Interest income",
+       "form": {
+         "2022": "Field g3 - Form TOI 01"
+       },
+       "cross_year": "No",
+       "attribute": "No"
+     },
+
     "rent_inc": {
       "type": "float",
       "desc": "rental income",
@@ -531,7 +542,8 @@
       "desc": "Deductions for charitable contributions allowed as per tax law",
       "form": {
         "2022": "Field f5 - Form TOI 01"
-      }
+           }
+
     },
     "non_ded_charity": {
        "type": "float",
