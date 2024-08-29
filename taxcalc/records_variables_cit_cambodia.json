@@ -10,16 +10,16 @@
       "cross_year": "No",
       "attribute": "No"
     },
-     "id_n": {
-       "required": true,
-       "type": "int",
-       "desc": "Unique positive numeric identifier for filing unit",
-       "form": {
-         "2022": "private info"
-       },
-       "cross_year": "No",
-       "attribute": "No"
-     },
+    "id_n": {
+      "required": true,
+      "type": "int",
+      "desc": "Unique positive numeric identifier for filing unit",
+      "form": {
+        "2022": "private info"
+      },
+      "cross_year": "No",
+      "attribute": "No"
+    },
     "Year": {
       "required": true,
       "type": "int",
@@ -39,7 +39,7 @@
       },
       "cross_year": "No",
       "attribute": "Yes"
-    },    
+    },
     "sector_code": {
       "required": false,
       "type": "int",
@@ -77,24 +77,24 @@
       "cross_year": "No",
       "attribute": "No"
     },
-     "Spl_depr_flag": {
-       "type": "int",
-       "desc": "Whether Qualified Investment Project is eligible to claim spl depreciation",
-       "form": {
-         "2022": "private info"
-       },
-       "cross_year": "No",
-       "attribute": "No"
-     },
-       "mintax_flag": {
-         "type": "int",
-         "desc": "Whether Qualified Investment Project is eligible to claim spl depreciation",
-         "form": {
-           "2022": "private info"
-         },
-         "cross_year": "No",
-         "attribute": "No"
-       },
+    "Spl_depr_flag": {
+      "type": "int",
+      "desc": "Whether Qualified Investment Project is eligible to claim spl depreciation",
+      "form": {
+        "2022": "private info"
+      },
+      "cross_year": "No",
+      "attribute": "No"
+    },
+    "mintax_flag": {
+      "type": "int",
+      "desc": "Whether Qualified Investment Project is eligible to claim spl depreciation",
+      "form": {
+        "2022": "private info"
+      },
+      "cross_year": "No",
+      "attribute": "No"
+    },
     "Legal_form": {
       "type": "int",
       "desc": "Legal form - Prop., Pvt Ltd, LLC",
@@ -293,15 +293,24 @@
       "cross_year": "No",
       "attribute": "No"
     },
-      "depr": {
-        "type": "float",
-        "desc": "Depreciation reported by taxpayer",
-        "form": {
-          "2022": "Field g3 - Form TOI 01"
-        },
-        "cross_year": "No",
-        "attribute": "No"
+    "rent_inc": {
+      "type": "float",
+      "desc": "Rental income",
+      "form": {
+        "2022": "Field  - Form TOI 01"
       },
+      "cross_year": "No",
+      "attribute": "No"
+    },
+    "depr": {
+      "type": "float",
+      "desc": "Depreciation reported by taxpayer",
+      "form": {
+        "2022": "Field g3 - Form TOI 01"
+      },
+      "cross_year": "No",
+      "attribute": "No"
+    },
     "accum_inc": {
       "type": "float",
       "desc": "Accumulated income - mining companies",
@@ -311,16 +320,16 @@
       "cross_year": "No",
       "attribute": "No"
     },
-     "accum_exp": {
-       "type": "float",
-       "desc": "Accumulated expenses - mining companies",
-       "form": {
-         "2022": "Field x3 - Form TOI 01"
-       },
-       "cross_year": "No",
-       "attribute": "No"
-     },
-   "Loss_lag1": {
+    "accum_exp": {
+      "type": "float",
+      "desc": "Accumulated expenses - mining companies",
+      "form": {
+        "2022": "Field x3 - Form TOI 01"
+      },
+      "cross_year": "No",
+      "attribute": "No"
+    },
+    "Loss_lag1": {
       "type": "float",
       "desc": "Brought forward loss - one years old",
       "form": {
@@ -412,77 +421,77 @@
     }
   },
   "calc": {
-     "Turnover": {
-       "type": "float",
-       "desc": "Sum of operating revenues, subsidiary revenues and other revenues",
-       "form": {
-         "2022": ""
-       }
-     },
-     "Total_assets": {
-        "type": "float",
-        "desc": "Sum of current and non-current assets",
-        "form": {
-          "2022": ""
-        }
-      },
-     "sector": {
-          "type": "int",
-          "desc": "Sector of business firm - Manufacturing, Service, QIP, Insurance, Mining",
-          "form": {
-            "2022": ""
-          }
-        },
-     "size": {
-          "type": "int",
-          "desc": "size of business firm - small, medium, large",
-          "form": {
-            "2022": ""
-          }
-        },
-     "normal_depr_base": {
-        "type": "float",
-        "desc": "Depreciation base eligible for standard depreciation as per tax law",
-        "form": {
-          "2022": ""
-        }
-      },
+    "Turnover": {
+      "type": "float",
+      "desc": "Sum of operating revenues, subsidiary revenues and other revenues",
+      "form": {
+        "2022": ""
+      }
+    },
+    "Total_assets": {
+      "type": "float",
+      "desc": "Sum of current and non-current assets",
+      "form": {
+        "2022": ""
+      }
+    },
+    "sector": {
+      "type": "int",
+      "desc": "Sector of business firm - Manufacturing, Service, QIP, Insurance, Mining",
+      "form": {
+        "2022": ""
+      }
+    },
+    "size": {
+      "type": "int",
+      "desc": "size of business firm - small, medium, large",
+      "form": {
+        "2022": ""
+      }
+    },
+    "normal_depr_base": {
+      "type": "float",
+      "desc": "Depreciation base eligible for standard depreciation as per tax law",
+      "form": {
+        "2022": ""
+      }
+    },
     "normal_depr": {
-        "type": "float",
-        "desc": "Normal depreciation as per tax law",
-        "form": {
-          "2022": ""
-        }
-      },
-     "spl_depr_base": {
-          "type": "float",
-          "desc": "Depreciation base eligible for special depreciation as per tax law",
-          "form": {
-            "2022": ""
-          }
-        },
+      "type": "float",
+      "desc": "Normal depreciation as per tax law",
+      "form": {
+        "2022": ""
+      }
+    },
+    "spl_depr_base": {
+      "type": "float",
+      "desc": "Depreciation base eligible for special depreciation as per tax law",
+      "form": {
+        "2022": ""
+      }
+    },
     "spl_depr": {
-          "type": "float",
-          "desc": "Special depreciation as per tax law",
-          "form": {
-            "2022": ""
-          }
-        },
+      "type": "float",
+      "desc": "Special depreciation as per tax law",
+      "form": {
+        "2022": ""
+      }
+    },
     "total_depr": {
-               "type": "float",
-               "desc": "Total depreciation as per tax law",
-               "form": {
-                 "2022": ""
-               }
-             },
+      "type": "float",
+      "desc": "Total depreciation as per tax law",
+      "form": {
+        "2022": ""
+      }
+    },
     "Cl_wdv": {
-               "type": "float",
-               "desc": "Closing WDV of depreciable assets",
-               "form": {
-                 "2022": ""
-               }
-             },
-     "net_accounting_profit": {
+      "type": "float",
+      "desc": "Closing WDV of depreciable assets",
+      "form": {
+        "2022": ""
+      }
+    },
+    "net_accounting_profit": {
       "type": "float",
       "desc": "computed accounting business profit",
       "form": {
@@ -496,13 +505,13 @@
         "2022": "Sum of fields e5, e18, e25 - Form TOI 01"
       }
     },
-      "total_deductions": {
-        "type": "float",
-        "desc": "deductions from accounting profit to compute taxable profits",
-        "form": {
-          "2022": "Field e31 - sum of fields e26, e27, e28, e29, e30 - Form TOI 01"
-        }
-      },
+    "total_deductions": {
+      "type": "float",
+      "desc": "deductions from accounting profit to compute taxable profits",
+      "form": {
+        "2022": "Field e31 - sum of fields e26, e27, e28, e29, e30 - Form TOI 01"
+      }
+    },
     "total_non_tax_inc": {
       "type": "float",
       "desc": "Sum of all non-taxable income such as dividends, capital gains from sale of assets",
@@ -525,12 +534,12 @@
       }
     },
     "non_ded_charity": {
-       "type": "float",
-       "desc": "Charitable contributions not allowed as per tax law",
-       "form": {
-         "2022": "Field f6 - Form TOI 01"
-       }
-     },
+      "type": "float",
+      "desc": "Charitable contributions not allowed as per tax law",
+      "form": {
+        "2022": "Field f6 - Form TOI 01"
+      }
+    },
     "profit_before_int": {
       "type": "float",
       "desc": "Taxable Income before allowing interest deductions as per tax law",
@@ -545,20 +554,20 @@
         "2022": "Field g8 / e39 - Form TOI 01"
       }
     },
-  "profit_after_int": {
-    "type": "float",
-    "desc": "Taxable Income after allowing interest deductions as per tax law",
-    "form": {
-      "2022": "Field e40 - Form TOI 01"
-    }
-  },
-   "Used_loss_total": {
-     "type": "float",
-     "desc": "Loss used during the year as per tax law",
-     "form": {
-       "2022": "Field e41 - Form TOI 01"
-     }
-   },
+    "profit_after_int": {
+      "type": "float",
+      "desc": "Taxable Income after allowing interest deductions as per tax law",
+      "form": {
+        "2022": "Field e40 - Form TOI 01"
+      }
+    },
+    "Used_loss_total": {
+      "type": "float",
+      "desc": "Loss used during the year as per tax law",
+      "form": {
+        "2022": "Field e41 - Form TOI 01"
+      }
+    },
     "net_taxable_profit": {
       "type": "float",
       "desc": "Net tax base after allowing loss adjustment as per tax law",
@@ -574,12 +583,12 @@
       }
     },
     "excess_tax": {
-         "type": "float",
-         "desc": "Excess tax payable by Mining companies",
-         "form": {
-           "2022": "Field x5 / e44 - Form TOI 01"
-         }
-       },
+      "type": "float",
+      "desc": "Excess tax payable by Mining companies",
+      "form": {
+        "2022": "Field x5 / e44 - Form TOI 01"
+      }
+    },
     "citax": {
       "type": "float",
       "desc": "tax due on net tax base",
@@ -658,11 +667,11 @@
       }
     },
     "MAT": {
-       "type": "float",
-       "desc": "Minimum Alternative Tax",
-       "form": {
-         "2022": "new item"
-          }
-        }          
+      "type": "float",
+      "desc": "Minimum Alternative Tax",
+      "form": {
+        "2022": "new item"
+      }
+    }
   }
 }
