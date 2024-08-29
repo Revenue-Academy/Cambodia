@@ -236,7 +236,7 @@ def Adj_profit(net_accounting_profit, total_additions, total_deductions, total_n
 @iterate_jit(nopython=True)
 def Adj_profit(net_accounting_profit, total_additions, total_deductions,rate_ded_dividends,dividends, total_non_tax_inc, rent_inc, adjusted_profit ):
     """
-    Compute total taxable profits afer adding back non-allowable deductions.
+    Compute total taxable profits after adding back non-allowable deductions.
     """
     adjusted_profit = net_accounting_profit + total_additions + rent_inc + dividends * (1-rate_ded_dividends) - total_deductions - total_non_tax_inc
     return adjusted_profit
