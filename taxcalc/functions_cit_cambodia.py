@@ -205,11 +205,16 @@ def Total_deductions(total_depr, dec_provision, loss_disposal, other_ded_exp, to
 
 
 @iterate_jit(nopython=True)
-def Total_non_tax_inc(dividends, capgain_disp_assets, other_inc, total_non_tax_inc):
+def Total_non_tax_inc( capgain_disp_assets, other_inc, total_non_tax_inc):
+
     """
+    - Remove "dividends" from parameter, as dividend now is taxable income
+    
     Compute total taxable profits afer adding back non-allowable deductions.
+    
+    - Remove "dividends" from calculation, as dividend already remove from parameter
     """
-    total_non_tax_inc = dividends + capgain_disp_assets + other_inc
+    total_non_tax_inc = capgain_disp_assets + other_inc 
     return total_non_tax_inc
 
 
@@ -220,11 +225,12 @@ Calculation of adjusted profits
 '''
 
 @iterate_jit(nopython=True)
-def Adj_profit(net_accounting_profit, total_additions, total_deductions, total_non_tax_inc, rent_inc, adjusted_profit ):
+def Adj_profit(net_accounting_profit, total_additions, total_deductions, total_non_tax_inc, rent_inc, dividends, rate_ded_dividend, adjusted_profit ):
     """
     Compute total taxable profits afer adding back non-allowable deductions.
     """
-    adjusted_profit = net_accounting_profit + total_additions + rent_inc - total_deductions - total_non_tax_inc
+    total_ded_div = dividends * rate_ded_dividend 
+    adjusted_profit = net_accounting_profit + total_additions + rent_inc +  total_ded_div - total_deductions - total_non_tax_inc
     return adjusted_profit
 
 
