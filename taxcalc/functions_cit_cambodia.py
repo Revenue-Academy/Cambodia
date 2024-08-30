@@ -445,7 +445,7 @@ def cit_liability(net_tax_base_behavior, excess_tax, sector, size, Legal_form, Q
     """
     # subtract TI_special_rates from TTI to get Aggregate_Income, which is
     # the portion of TTI that is taxed at normal rates
-    mat = mat_rate * Turnover
+    
     if net_tax_base_behavior <= 0:
         citax = 0
     else:
@@ -463,8 +463,9 @@ def cit_liability(net_tax_base_behavior, excess_tax, sector, size, Legal_form, Q
             citax = cit_rate_qip * max(net_tax_base_behavior, 0)
         else:
             citax = cit_rate_std * max(net_tax_base_behavior, 0)
-            
-        citax = max(mat, citax)
+        
+    mat = mat_rate * Turnover
+    citax = max(mat, citax)
             
     return citax
 
