@@ -439,12 +439,13 @@ Calculation of corprate tax
 @iterate_jit(nopython=True)
 def cit_liability(net_tax_base_behavior, excess_tax, sector, size, Legal_form, QIP_flag, mintax_flag, Turnover, 
                   cit_rate_std, cit_rate_mining, switch_prog, cit_rate_insurance, cit_rate_qip, cit_rate1, 
-                  cit_rate2, cit_rate3, cit_rate4, cit_rate5, tbrk1, tbrk2, tbrk3, tbrk4, mintax_rate, citax):
+                  cit_rate2, cit_rate3, cit_rate4, cit_rate5, tbrk1, tbrk2, tbrk3, tbrk4, mintax_rate, mat_rate, citax):
     """
     Compute tax liability given the corporate rate
     """
     # subtract TI_special_rates from TTI to get Aggregate_Income, which is
     # the portion of TTI that is taxed at normal rates
+    mat = mat_rate * Turnover
     if net_tax_base_behavior <= 0:
         citax = 0
     else:
@@ -462,7 +463,9 @@ def cit_liability(net_tax_base_behavior, excess_tax, sector, size, Legal_form, Q
             citax = cit_rate_qip * max(net_tax_base_behavior, 0)
         else:
             citax = cit_rate_std * max(net_tax_base_behavior, 0)
-        
+            
+        citax = max(mat, citax)
+            
     return citax
 
 
