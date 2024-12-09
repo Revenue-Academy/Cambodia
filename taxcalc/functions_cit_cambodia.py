@@ -203,7 +203,7 @@ def Total_deductions(total_depr, dec_provision, loss_disposal, other_ded_exp, to
     total_deductions = total_depr + dec_provision + loss_disposal + other_ded_exp
     return total_deductions
 
-
+'''
 @iterate_jit(nopython=True)
 def Total_non_tax_inc(capgain_disp_assets, other_inc, total_non_tax_inc):
     """
@@ -211,14 +211,20 @@ def Total_non_tax_inc(capgain_disp_assets, other_inc, total_non_tax_inc):
     """
     total_non_tax_inc = capgain_disp_assets + other_inc
     return total_non_tax_inc
-
-
+'''
+@iterate_jit(nopython=True)
+def Total_non_tax_inc( capgain_disp_assets, other_inc, total_non_tax_inc):
+    """
+    Compute total taxable profits afer adding back non-allowable deductions.
+    """
+    total_non_tax_inc =  capgain_disp_assets + other_inc
+    return total_non_tax_inc
 '''
 -------------------------------------------------------------------------------------
 Calculation of adjusted profits
 -------------------------------------------------------------------------------------
 '''
-
+'''
 @iterate_jit(nopython=True)
 def Adj_profit(net_accounting_profit, total_additions, total_deductions, total_non_tax_inc, rent_inc , dividends, ded_div_rate, adjusted_profit ):
     """
@@ -226,8 +232,14 @@ def Adj_profit(net_accounting_profit, total_additions, total_deductions, total_n
     """
     adjusted_profit = net_accounting_profit + total_additions + rent_inc + dividends*(1-ded_div_rate) - total_deductions - total_non_tax_inc
     return adjusted_profit
-
-
+'''
+@iterate_jit(nopython=True)
+def Adj_profit(net_accounting_profit, total_additions, total_deductions,rate_ded_dividends,dividends, total_non_tax_inc, rent_inc, adjusted_profit ):
+    """
+    Compute total taxable profits after adding back non-allowable deductions.
+    """
+    adjusted_profit = net_accounting_profit + total_additions + rent_inc + dividends * (1-rate_ded_dividends) - total_deductions - total_non_tax_inc
+    return adjusted_profit
 '''
 -------------------------------------------------------------------------------------
 Calculation of allowable charity contributions
