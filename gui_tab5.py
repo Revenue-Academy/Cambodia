@@ -116,12 +116,15 @@ def tab5(self):
     self.save_inputs()
     self.block_distribution_pos_x = self.allocate_pos_x(pos_x, self.status,
                                                     self.block_distribution_pos_x)
-         
-    self.TAB5_root_title=Label(self.TAB5,text="Tax Microsimulation Model",
-             font = self.fontStyle_title)
+    self.image1 = Image.open("wb_icon.jpg")
+    self.image2 = self.image1.resize((64, 64), Image.LANCZOS)
+    self.image = ImageTk.PhotoImage(self.image2)
+    
+    self.TAB5_root_title=tk.Label(self.TAB5,text="Tax Microsimulation Model", image=self.image,
+             font = self.fontStyle_title, compound="left")
     self.TAB5_root_title.place(relx = self.title_pos_x, rely = self.title_pos_y, anchor = "n")
 
-    self.TAB5_root_title=Label(self.TAB5,text="Distribution Tables",
+    self.TAB5_root_title=tk.Label(self.TAB5,text="Distribution Tables",
              font = self.fontStyle_sub_title)
     self.TAB5_root_title.place(relx = self.title_pos_x, rely = self.sub_title_pos_y, anchor = "n")
     
