@@ -5,7 +5,7 @@
       [
         "0.0",
         "0.2",
-        "0.4"
+        "0.5"
       ]
     ],
     "selected_year": [
@@ -16,8 +16,8 @@
     "selected_item": "elasticity_cit_taxable_income_threshold",
     "selected_value": [
       [
-        10000000.0,
-        1000000000.0,
+        1e+6,
+        1e+9,
         9e+99
       ]
     ],

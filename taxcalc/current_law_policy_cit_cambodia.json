@@ -852,7 +852,7 @@
     },    
     "_cit_rate_mining": {
         "long_name": "rate at which corporates in Mining sector are taxed",
-        "description": "Standard Corporate Tax rate",
+        "description": "rate at which corporates in Mining sector are taxed",
         "itr_ref": "Tax Law",
         "notes": "",
         "row_var": "Year",
@@ -1049,7 +1049,7 @@
         "integer_value": false,
         "value": [      
                 [
-                1e+7,
+                1e+6,
                 1e+9,
                 9e+99
                 ]

@@ -13,6 +13,7 @@ from tkinter.messagebox import showinfo
 from tkinter import filedialog
 
 from threading import Thread
+from decimal import Decimal
 
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -26,9 +27,8 @@ from guifuncs import save_inputs, get_inputs
 from PIL import Image,ImageTk
 
 class super_combo(tk.Frame):
-    def __init__(self, tab, input_json, field_year, field_value, position_x, 
-                 position_y, attribute_value=None, 
-                 selected_attribute_widget=None,
+    def __init__(self, tab, input_json, field_year, field_value, position_x, position_y, 
+                 field_desc=None, attribute_value=None, selected_attribute_widget=None,
                  editable_field_year=None, elasticity=None, num_combos=None):
 
         if elasticity is not None:
@@ -47,9 +47,12 @@ class super_combo(tk.Frame):
             self.selected_attribute_widget = selected_attribute_widget
         else:
             self.input_json = self.input_json_main
-        #print('self.input_json ', self.input_json)
+        print('self.input_json is -', self.input_json)
+       
         self.field_year=field_year
         self.field_value=field_value
+        self.field_desc=field_desc
+        print('input json len', self.input_json[list(self.input_json.keys())[0]][field_year])
         self.width_json = 0
         if num_combos is not None:
             self.width_json = num_combos
@@ -99,14 +102,21 @@ class super_combo(tk.Frame):
             self.entry_1_y = self.combo_y            
             self.entry_2_label_x = self.entry_1_label_x + self.entry_1_width_x + self.entry_entry_gap_x            
             self.entry_2_label_y = self.entry_1_label_y
+            self.entry_3_label_x = self.entry_2_label_x + self.entry_1_width_x + 11*self.entry_entry_gap_x            
+            self.entry_3_label_y = self.entry_1_label_y
             self.entry_2_x = self.entry_2_label_x
-            self.entry_2_y = self.entry_1_y        
+            self.entry_2_y = self.entry_1_y   
+            self.entry_3_x = self.entry_3_label_x
+            self.entry_3_y = self.entry_1_y
+            
             self.plus_button_x = self.entry_2_x + self.entry_2_width_x + 5*self.entry_entry_gap_x
             self.plus_button_y = self.entry_1_y
             self.minus_button_x = self.plus_button_x + self.entry_entry_gap_x
             self.minus_button_y = self.entry_1_y
             self.reset_button_x = self.minus_button_x + self.entry_entry_gap_x
             self.reset_button_y = self.entry_1_y
+            self.entry_3_newx = self.entry_2_label_x + self.entry_1_width_x + 11*self.entry_entry_gap_x 
+            self.entry_3_newy = self.entry_1_y 
             self.generate_revenue_policy_button_x = self.combo_x
             self.generate_revenue_policy_button_y = self.combo_y + self.combo_button_gap_y            
         else:
@@ -120,6 +130,10 @@ class super_combo(tk.Frame):
             self.entry_2_x = self.entry_1_x
             self.entry_2_y = self.entry_1_y + self.combo_combo_gap_y          
             self.plus_button_x = self.entry_1_x + width*(max(self.entry_1_width_x,self.entry_2_width_x) + 2*self.entry_entry_gap_x)
+            self.entry_3_label_x = self.entry_2_label_x + self.entry_1_width_x + 11*self.entry_entry_gap_x            
+            self.entry_3_label_y = self.entry_1_label_y 
+            self.entry_3_x = self.entry_3_label_x
+            self.entry_3_y = self.entry_1_y 
             self.plus_button_y = self.entry_1_y
             self.minus_button_x = self.plus_button_x + self.entry_entry_gap_x
             self.minus_button_y = self.entry_1_y
@@ -173,7 +187,8 @@ class super_combo(tk.Frame):
             self.block_widget_dict[num][1].bind("<<ComboboxSelected>>", lambda event: self.show_policy_selection(event, self.block_widget_dict))
 
             self.block_widget_dict[num][2] = {}
-
+            #self.block_widget_dict[num][5] = {}
+            
             if (self.width_json==1):
                 self.entry_1_new_x = self.entry_1_x
                 self.entry_1_new_y = self.combo_new_y                
@@ -212,31 +227,41 @@ class super_combo(tk.Frame):
             if self.attribute_value is not None:
                 self.block_widget_dict[num][4] = {}
                 self.block_widget_dict[num][4] = tk.Entry(tab, width=15, font = self.fontStyle)        
-                self.block_widget_dict[num][4].place(relx = self.attribute_entry_x, rely = self.combo_new_y, anchor = "w")               
+                self.block_widget_dict[num][4].place(relx = self.attribute_entry_x, rely = self.combo_new_y, anchor = "w")             
+            
+            if self.field_desc is not None:
+                if (self.width_json==1):
+                    self.block_widget_dict[num][5] = {}
+                    self.block_widget_dict[num][5] = tk.Label(tab, width=90, font = self.fontStyle1)        
+                    self.block_widget_dict[num][5].place(relx = self.entry_3_label_x, rely=self.combo_new_y, anchor = "w")        
  
             #self.num_reforms += 1
             if (self.width_json==1):
                 self.generate_revenue_policy_button_new_y = self.combo_y + 2*self.combo_combo_gap_y*(self.num_widgets-1) + self.combo_button_gap_y
                 #print('button pos new ',  self.generate_revenue_policy_button_new_y)
             else:
-                self.generate_revenue_policy_button_new_y = self.combo_y + 2*self.combo_combo_gap_y*(self.num_widgets-1) + self.combo_button_gap_y
+                self.generate_revenue_policy_button_new_y = self.combo_y + 2*self.combo_combo_gap_y*(self.num_widgets) + self.combo_button_gap_y
             self.button_generate_revenue_policy.place(relx = self.generate_revenue_policy_button_x,
                                                     rely = self.generate_revenue_policy_button_new_y, anchor = "w")
 
     def reset_policy_widgets(self):
         self.num_widgets = len(self.block_widget_dict)
         num = self.num_widgets
-        #print('self.num_widgets in reset widgets', self.num_widgets)
+        print('number of widgets in reset widgets', self.num_widgets)
         for num in range(2, self.num_widgets+1):
             self.block_widget_dict[num][1].destroy()
+            if self.field_desc is not None:
+                self.block_widget_dict[num][5].destroy()
             if self.attribute_value is not None:
                 self.block_widget_dict[num][4].destroy()
+            
             if (self.width_json>1):
                 self.l4[num].destroy()
                 self.l5[num].destroy()
             for i in range(self.width_json):
                 self.block_widget_dict[num][2][i].destroy()
                 self.block_widget_dict[num][3][i].destroy()
+                
             self.block_widget_dict.pop(num, None)
         self.num_reforms = 0
         self.num_widgets = 1
@@ -247,6 +272,8 @@ class super_combo(tk.Frame):
             self.block_widget_dict[1][2][i].config(state=tk.NORMAL)
             self.block_widget_dict[1][2][i].delete(0, tk.END)
             self.block_widget_dict[1][3][i].delete(0, tk.END)
+            
+        self.block_widget_dict[1][5].config(text="")    
         #print('button at reset ',self.generate_revenue_policy_button_y)            
         self.button_generate_revenue_policy.place(relx = self.generate_revenue_policy_button_x, 
                                                   rely = self.generate_revenue_policy_button_y, anchor = "w")
@@ -288,6 +315,8 @@ class super_combo(tk.Frame):
             self.block_widget_dict[num][1].destroy()
             if self.attribute_value is not None:
                 self.block_widget_dict[num][4].destroy()
+            if self.field_desc is not None:
+                self.block_widget_dict[num][5].destroy()
             for i in range(self.width_json):            
                 self.block_widget_dict[num][2][i].destroy()
                 self.block_widget_dict[num][3][i].destroy()
@@ -300,7 +329,8 @@ class super_combo(tk.Frame):
                 #print('button at 1 del ',self.generate_revenue_policy_button_new_y)
             else:
                 self.l4[num].destroy()
-                self.l5[num].destroy()  
+                self.l5[num].destroy()
+                self.l6[num].destroy()
                 self.generate_revenue_policy_button_new_y = self.combo_y + 2*self.combo_combo_gap_y*(self.num_widgets-1) + self.combo_button_gap_y
                 #print('button at >1 del ',self.generate_revenue_policy_button_new_y)
             self.button_generate_revenue_policy.place(relx = self.generate_revenue_policy_button_x, rely = self.generate_revenue_policy_button_new_y, anchor = "w")
@@ -370,10 +400,11 @@ class super_combo(tk.Frame):
             self.attribute_value = self.selected_attribute_widget.get()
             self.input_json=self.input_json_main[int(self.attribute_value)]      
         selected_item = widget_dict[num][1].get()
-
+        print('selected item', selected_item)
         #print('vars ',vars)
         selected_param = {}
         selected_value = {}
+        selected_desc = {}
         #print('input_json ', self.input_json)
         #print('self.input_json selected item \n', self.input_json['_'+ selected_item])
         start_year = int(global_vars['start_year'])
@@ -393,11 +424,16 @@ class super_combo(tk.Frame):
             if (self.width_json==1):
                 param = int(self.input_json['_'+ selected_item][self.field_year][-1])                
                 value = self.input_json['_'+ selected_item][self.field_value][-1]
+                if self.field_desc is not None:
+                    selected_desc = self.input_json['_'+ selected_item][self.field_desc]
             else:
                 param = int(self.input_json['_'+ selected_item][self.field_year][j])                
-                value = self.input_json['_'+ selected_item][self.field_value][j]            
-            #print('param ', param)
-            #print('value ', value)
+                value = self.input_json['_'+ selected_item][self.field_value][j]
+                if self.field_desc is not None:
+                    selected_desc = self.input_json['_'+ selected_item][self.field_desc]
+            print('param ', param)
+            print('value ', value)
+            #print('desc', desc)
             if (self.width_json==1) and not self.elasticity:
                 if (param < start_year):
                     param = start_year
@@ -405,26 +441,34 @@ class super_combo(tk.Frame):
             if self.elasticity or ((param >= start_year) and (param <= end_year)):        
                 selected_param[i] = param
                 selected_value[i] = value
-                if selected_param[i]>=1e99:
-                    formatted_param = '{:.0e}'.format(selected_param[i])
+                print('selected_value', "{0:.0e}".format(Decimal(selected_param[i])))
+                if selected_param[i]>=1e6:
+                    formatted_param = "{0:.0e}".format(Decimal(selected_param[i]))
                 else:
                     formatted_param = selected_param[i]                
                 widget_dict[num][2][i].config(state=tk.NORMAL)               
                 widget_dict[num][2][i].delete(0, tk.END)
                 widget_dict[num][2][i].insert(tk.END, formatted_param)
-                if selected_value[i]>=1e99:
-                    formatted_value = '{:.0e}'.format(selected_value[i])
+                if selected_value[i]>=1e6:
+                    formatted_value = "{0:.0e}".format(Decimal(selected_value[i]))
                 else:
                     formatted_value = selected_value[i]                
                 if (not self.editable_field_year):
                     widget_dict[num][2][i].config(state=tk.DISABLED)             
                 widget_dict[num][3][i].delete(0, tk.END)
                 widget_dict[num][3][i].insert(tk.END, formatted_value)
+                if self.field_desc is not None:
+                    widget_dict[num][5].config(text=selected_desc)
+                # widget_dict[num][4][i].delete(0, tk.END)
+                # widget_dict[num][4][i].insert(tk.END, desc)
                 i=i+1
 
         if self.attribute_value is not None:
             widget_dict[num][4].delete(0, tk.END)
             widget_dict[num][4].insert(tk.END, self.attribute_value) 
+        
+        
+        
         print('widget_dict is', widget_dict)    
         return widget_dict
 
@@ -432,8 +476,12 @@ class super_combo(tk.Frame):
 
         global_vars = get_inputs(self)
 
+        self.image1 = Image.open("wb_icon.jpg")
+        self.image2 = self.image1.resize((64, 64), Image.LANCZOS)
+        self.image = ImageTk.PhotoImage(self.image2)
+        
         self.root_title=tk.Label(tab,text="Tax Microsimulation Model",
-                 font = self.fontStyle_title)
+                 font = self.fontStyle_title, image=self.image, compound="left")
         self.root_title.place(relx = self.title_pos_x, rely = self.title_pos_y, anchor = "n")
         #print('Main Title relx = self.title_pos_x, rely = self.title_pos_y ', self.title_pos_x, self.title_pos_y)
        
@@ -467,7 +515,7 @@ class super_combo(tk.Frame):
         # will be the col_labels
         self.l4 = {}
         if self.elasticity:
-            self.l4[1]=tk.Label(tab,text=self.field_year.capitalize(), font = self.fontStyle)
+            self.l4[1]=tk.Label(tab,text=self.field_year.capitalize(), font = self.fontStyle1)
         else:
             self.l4[1]=tk.Label(tab,text="Year: ", font = self.fontStyle)
         
@@ -478,9 +526,10 @@ class super_combo(tk.Frame):
         start_year = int(global_vars['start_year'])
         end_year = int(global_vars['end_year'])
         year = start_year
+        print('width_json is ', self.width_json)
         for i in range(self.width_json):
             if (year <= end_year):
-                self.block_widget_dict[1][2][i] = tk.Entry(tab, width=8, font = self.fontStyle)
+                self.block_widget_dict[1][2][i] = tk.Entry(tab, width=8, font = self.fontStyle1)
                 if (self.width_json==1):
                     self.block_widget_dict[1][2][i].place(relx = self.entry_1_x, 
                                                           rely = self.entry_1_y, anchor = "w")
@@ -495,6 +544,11 @@ class super_combo(tk.Frame):
         self.l5[1]=tk.Label(tab, text="Value: ", font = self.fontStyle)
         self.l5[1].place(relx = self.entry_2_label_x, 
                  rely = self.entry_2_label_y, anchor = "w")
+        if self.field_desc is not None:
+            self.l6 = {}
+            self.l6[1]=tk.Label(tab, text="Description: ", font = self.fontStyle)
+            self.l6[1].place(relx = self.entry_3_label_x + 10*self.entry_entry_gap_x , 
+                 rely = self.entry_3_label_y, anchor = "w")
         
         # var = tk.StringVar() 
         # var.set("Long name placeholder")
@@ -504,6 +558,7 @@ class super_combo(tk.Frame):
 
         #print('Value: ', round(self.entry_2_label_x,2), self.entry_2_label_y)
         self.block_widget_dict[1][3] = {}
+        self.block_widget_dict[1][5] = {}
         year = start_year        
         for i in range(self.width_json):
             if (year <= end_year):            
@@ -516,7 +571,12 @@ class super_combo(tk.Frame):
         
         if self.attribute_value is not None:
             self.block_widget_dict[1][4] = tk.Entry(tab, width=15, font = self.fontStyle)        
-            self.block_widget_dict[1][4].place(relx = self.attribute_entry_x, rely = self.combo_y, anchor = "w")               
+            self.block_widget_dict[1][4].place(relx = self.attribute_entry_x, rely = self.combo_y, anchor = "w")      
+        
+        
+        if self.field_desc is not None:
+            self.block_widget_dict[1][5] = tk.Label(tab, width=90, font = self.fontStyle1)        
+            self.block_widget_dict[1][5].place(relx = self.entry_3_label_x, rely = self.entry_3_y, anchor = "w")    
                 
         i=0
         #print('Value Entry: ', round(self.entry_2_x + i*max(self.entry_1_width_x,self.entry_2_width_x)+(i+1)*self.entry_entry_gap_x,2), self.entry_1_y)
@@ -541,14 +601,11 @@ class super_combo(tk.Frame):
         self.button_generate_revenue_policy.place(relx = self.generate_revenue_policy_button_x,
                                                     rely = 1.2*self.generate_revenue_policy_button_y, anchor = "w")       
         
-        self.image1 = Image.open("world_bank.png")
-        self.image2 = self.image1.resize((700, 400), Image.LANCZOS)
-        self.image = ImageTk.PhotoImage(self.image2)
         # "world_bank.png"
         #self.image1 = ImageTk.PhotoImage(Image.open("egypt_flag.jpg"))
     
         #image = tk.PhotoImage(file="blank.png")
-        self.pic = tk.Label(tab,image=self.image)
-        self.pic.place(relx = 0.50, rely = 0.30, anchor = "nw")
-        self.pic.image = self.image
+        # self.pic = tk.Label(tab,image=self.image)
+        # self.pic.place(relx = 0.50, rely = 0.30, anchor = "nw")
+        # self.pic.image = self.image
         return (self.button_generate_revenue_policy, self.block_widget_dict)

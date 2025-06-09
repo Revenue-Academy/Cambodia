@@ -512,13 +512,17 @@ class Application(tk.Frame):
     
  
 def main():
-    # ctypes.windll.shcore.SetProcessDpiAwareness(1)
+    ctypes.windll.shcore.SetProcessDpiAwareness(1)
     root = tk.Tk()
     f = tkfont.Font(family='Courier New', size=11)
     s = ttk.Style()
     s.configure('.', font=f)
     root.geometry('1000x600')
     root.title("World Bank Microsimulation Model")
+    image = Image.open("wb_icon.jpg")
+    image = image.resize((16, 16), Image.LANCZOS)
+    icon = ImageTk.PhotoImage(image)
+    root.iconphoto(True,icon)
     root.state('zoomed')
     app = Application(root)
     app.mainloop()

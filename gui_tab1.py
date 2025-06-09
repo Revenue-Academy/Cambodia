@@ -435,9 +435,13 @@ def tab1(self):
     self.block_2_title_pos_x = 0.45
     
     self.block_3_title_pos_x = 0.75
+    
+    self.image1 = Image.open("wb_icon.jpg")
+    self.image2 = self.image1.resize((64, 64), Image.LANCZOS)
+    self.image = ImageTk.PhotoImage(self.image2)
 
-    self.TAB1_root_title=tk.Label(self.TAB1,text="Tax Microsimulation Model",
-             font = self.fontStyle_title)
+    self.TAB1_root_title=tk.Label(self.TAB1,text="Tax Microsimulation Model", image=self.image,
+             font = self.fontStyle_title, compound="left")
     self.TAB1_root_title.place(relx = self.title_pos_x, rely = self.title_pos_y, anchor = "n")
     
     self.TAB1_root_title=tk.Label(self.TAB1,text="Setting",
