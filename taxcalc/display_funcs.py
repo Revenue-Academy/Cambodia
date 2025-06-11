@@ -48,6 +48,7 @@ def display_table(window, data=None, header=None, year=None, row=None, footer=No
         row_index = data[row_num][0]    #read this as 'title'
         row_list = data[row_num][1:]    #read this as ['Year', 'Current Law', 'Reform', 'Diff']
         print('data used in row list in display table', row_list)
+        print('data used in row is ', data)
         check_span(row_list)
         if (row_index=="title"):
             tk.Label0 = tk.Label(window, text="", font=fontStyle_sub_title)
@@ -74,6 +75,7 @@ def display_table(window, data=None, header=None, year=None, row=None, footer=No
     
     if dataframe is not None:
         data = dataframe.values.tolist()
+        print('data in display funcs is ', data)
         all=True
     
     if all:

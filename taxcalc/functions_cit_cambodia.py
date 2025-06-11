@@ -106,7 +106,7 @@ def Normal_depr_base(Op_wdv, Add_assets, Dispose_assets, normal_depr_base):
     """
     Return the depreciation base
     """
-    normal_depr_base = Op_wdv + Add_assets - Dispose_assets
+    normal_depr_base = max(Op_wdv + Add_assets - Dispose_assets, 0)
     return normal_depr_base
 
 
@@ -166,7 +166,7 @@ def Cl_WDV(normal_depr_base, spl_depr_base, total_depr, Cl_wdv):
     """
     Return the closing written down value of depreciation base
     """
-    Cl_wdv = normal_depr_base + spl_depr_base - total_depr
+    Cl_wdv = max(normal_depr_base + spl_depr_base - total_depr, 0)
     return Cl_wdv
 
 
@@ -220,11 +220,13 @@ Calculation of adjusted profits
 '''
 
 @iterate_jit(nopython=True)
-def Adj_profit(net_accounting_profit, total_additions, total_deductions, total_non_tax_inc, rent_inc , dividends, ded_div_rate, adjusted_profit ):
+def Adj_profit(net_accounting_profit, total_additions, total_deductions, total_non_tax_inc, dividends, switch_gmt, ded_div_rate, adjusted_profit ):
     """
     Compute total taxable profits afer adding back non-allowable deductions.
     """
-    adjusted_profit = net_accounting_profit + total_additions + rent_inc + dividends*(1-ded_div_rate) - total_deductions - total_non_tax_inc
+    #adjusted_profit = net_accounting_profit + total_additions + rent_inc + dividends*(1-ded_div_rate) - total_deductions - total_non_tax_inc
+    adjusted_profit = net_accounting_profit + total_additions + (1-switch_gmt)*dividends*(1-ded_div_rate) - total_deductions - total_non_tax_inc
+    
     return adjusted_profit
 
 
@@ -437,8 +439,8 @@ Calculation of corprate tax
 '''
 
 @iterate_jit(nopython=True)
-def cit_liability(net_tax_base_behavior, excess_tax, sector, size, Legal_form, QIP_flag, mintax_flag, Turnover, 
-                  cit_rate_std, cit_rate_mining, switch_prog, cit_rate_insurance, cit_rate_qip, cit_rate1, 
+def cit_liability(net_tax_base_behavior, excess_tax, sector, size, Legal_form, QIP_flag, mintax_flag, Turnover, adjusted_profit,
+                  cit_rate_std, cit_rate_mining, switch_prog, switch_gmt, cit_rate_gmt, cit_rate_insurance, cit_rate_qip, cit_rate1, 
                   cit_rate2, cit_rate3, cit_rate4, cit_rate5, tbrk1, tbrk2, tbrk3, tbrk4, mintax_rate, citax):
     """
     Compute tax liability given the corporate rate
@@ -459,7 +461,8 @@ def cit_liability(net_tax_base_behavior, excess_tax, sector, size, Legal_form, Q
         elif sector == 5:
             citax = cit_rate_insurance * max(net_tax_base_behavior, 0)
         elif QIP_flag == 1:
-            citax = cit_rate_qip * max(net_tax_base_behavior, 0)
+            #citax = cit_rate_qip * max(net_tax_base_behavior, 0) + cit_rate_gmt * max(adjusted_profit, 0) * swtich_gmt
+            citax = max(cit_rate_qip * max(net_tax_base_behavior, 0), cit_rate_gmt * max(adjusted_profit, 0) * switch_gmt)
         else:
             citax = cit_rate_std * max(net_tax_base_behavior, 0)
         
