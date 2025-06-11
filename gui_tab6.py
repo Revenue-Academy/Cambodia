@@ -11,7 +11,10 @@ from tkinter import ttk
 import tkinter.font as tkfont
 from tkinter.messagebox import showinfo
 from tkinter import filedialog
-
+import matplotlib
+import matplotlib.ticker as mtick
+matplotlib.use("TkAgg")
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from threading import Thread
 
 import pandas as pd
@@ -63,6 +66,9 @@ def tab6(self):
     self.chart_combo = ttk.Combobox(self.TAB6, textvariable=self.chart_selection, 
                                     value=chart_list, font=self.text_font)
     #chart_combo.current(0)
+    self.image = ImageTk.PhotoImage(Image.open("blank.png"))
+    self.pic = tk.Label(self.TAB6,image=self.image)
+    self.pic.place(relx = 0.30, rely = 0.1, anchor = "nw")
     self.chart_combo.place(relx = self.combo_1_TAB6_x, 
                     rely = self.combo_1_TAB6_y, anchor = "w", width=250)
     
@@ -105,7 +111,7 @@ def display_chart(self, event, global_vars):
             
                  
         df1 = df1.rename_axis('Year').reset_index()
-        fig, ax = plt.subplots(figsize=(8, 6))
+        fig, ax = plt.subplots(figsize=(9, 7))
         plt.plot(df1['Year'], df1['Current Law'], color='r', marker='x',
                  label='Current Law')
         plt.plot(df1['Year'], df1['Reform'], color='b', marker='o', 
@@ -122,16 +128,19 @@ def display_chart(self, event, global_vars):
         self.image = ImageTk.PhotoImage(Image.open("rev_forecast.png"))
         self.pic = tk.Label(self.TAB6,image=self.image)
         self.pic.place(relx = 0.4, rely = 0.1, anchor = "nw")
-        self.pic.image = self.image             
+        self.pic.image = self.image    
+        # canvas = FigureCanvasTkAgg(fig, self)
+        # canvas_widget = canvas.get_tk_widget()
+        # canvas_widget.pack()         
     elif (selected_chart==tax_type+'_distribution_table'):
         df = pd.read_csv(selected_chart+'.csv', thousands=',') 
         df.drop('Unnamed: 0', axis=1, inplace=True)
         df = df.set_index('index')
         df.index.names = ['Decile']
-        fig, ax = plt.subplots(figsize=(8, 8))  
+        fig, ax = plt.subplots(figsize=(10, 8))  
         #drop the rows that includes the average and top 1%
         df=df[:-4]
-        ax = df.plot(kind='bar',y=[tax_collection_var+'_'+str(data_start_year), tax_collection_var+'_'+str(start_year), tax_collection_var+'_ref_'+str(start_year)],figsize=(7, 7))
+        ax = df.plot(kind='bar',y=[tax_collection_var+'_'+str(data_start_year), tax_collection_var+'_'+str(start_year), tax_collection_var+'_ref_'+str(start_year)],figsize=(9, 7))
         ax.set_xlabel("Gross Taxable Income Deciles")
         ax.yaxis.set_major_formatter(formatter)
         ax.yaxis.set_minor_formatter(NullFormatter())
@@ -143,14 +152,71 @@ def display_chart(self, event, global_vars):
         self.pic.place(relx = 0.4, rely = 0.1, anchor = "nw")
         self.pic.image = self.image
     
+    elif (selected_chart==tax_type+'_distribution_table_sector'):
+        df = pd.read_csv(selected_chart+'.csv', thousands=',') 
+        #df.drop('Unnamed: 0', axis=1, inplace=True)
+        # df = df.set_index('index')
+        # df.index.names = df['Sector']
+        cat = df['Sector']
+        y1 = df['Current Law']
+        y2 = df['Reform']
+        w, x = 0.4, np.arange(len(cat))
+
+        fig, ax = plt.subplots(figsize=(9, 7))  
+        bar = ax.bar(x - w/2, y1, width=w, label = 'Current Law')
+        ax.bar_label(bar, fmt='{:,.0f}', label_type='edge')
+        bar = ax.bar(x + w/2, y2, width=w, label = 'Reform')
+        ax.bar_label(bar, fmt='{:,.0f}', label_type='edge')
+        # ax.yaxis.set_major_formatter(formatter)
+        # ax.yaxis.set_minor_formatter(NullFormatter())
+        ax.set_xticks(x)
+        ax.set_xticklabels(cat)
+        ax.set_ylabel("Tax liability in billions")
+        ax.legend() 
+        pic_filename1 = "distribution_chart_sector.png"
+        plt.savefig(pic_filename1)
+        self.image = ImageTk.PhotoImage(Image.open("distribution_chart_sector.png"))
+        self.pic = tk.Label(self.TAB6,image=self.image)
+        self.pic.place(relx = 0.4, rely = 0.1, anchor = "nw")
+        self.pic.image = self.image
+    
+    elif (selected_chart==tax_type+'_distribution_table_sector_etr'):
+        df = pd.read_csv(selected_chart+'.csv', thousands=',') 
+        #df.drop('Unnamed: 0', axis=1, inplace=True)
+        # df = df.set_index('index')
+        # df.index.names = df['Sector']
+        cat = df['Sector']
+        y1 = df['Current Law']
+        y2 = df['Reform']
+        w, x = 0.4, np.arange(len(cat))
+
+        fig, ax = plt.subplots(figsize=(9, 7))  
+        bar = ax.bar(x - w/2, y1, width=w, label = 'Current Law')
+        ax.bar_label(bar, fmt='{:,.1%}', label_type='edge')
+        bar = ax.bar(x + w/2, y2, width=w, label = 'Reform')
+        ax.bar_label(bar, fmt='{:,.1%}', label_type='edge')
+        # ax.yaxis.set_major_formatter(formatter)
+        # ax.yaxis.set_minor_formatter(NullFormatter())
+        ax.set_xticks(x)
+        ax.set_xticklabels(cat)
+        ax.yaxis.set_major_formatter(mtick.PercentFormatter(xmax=1))
+        ax.set_ylabel("Effective Tax Rate (based on adjusted profit)")
+        ax.legend() 
+        pic_filename1 = "distribution_chart_sector_etr.png"
+        plt.savefig(pic_filename1)
+        self.image = ImageTk.PhotoImage(Image.open("distribution_chart_sector_etr.png"))
+        self.pic = tk.Label(self.TAB6,image=self.image)
+        self.pic.place(relx = 0.4, rely = 0.1, anchor = "nw")
+        self.pic.image = self.image
+        
     elif (selected_chart==tax_type+'_distribution_table_top1'):
         df = pd.read_csv(selected_chart+'.csv', thousands=',') 
         df.drop('Unnamed: 0', axis=1, inplace=True)
         df = df.set_index('index')
         df.index.names = ['Decile']
-        fig, ax = plt.subplots(figsize=(8, 8))              
+        fig, ax = plt.subplots(figsize=(9, 7))              
         ax=df.plot(kind='bar',y=[tax_collection_var+'_'+str(data_start_year), 
-                                tax_collection_var+'_'+str(start_year), tax_collection_var+'_ref_'+str(start_year)],figsize=(7, 7))       
+                                tax_collection_var+'_'+str(start_year), tax_collection_var+'_ref_'+str(start_year)],figsize=(9, 7))       
         ax.set_xlabel("Gross Taxable Income Deciles")
         ax.yaxis.set_major_formatter(formatter)
         ax.yaxis.set_minor_formatter(NullFormatter())
@@ -180,7 +246,7 @@ def display_chart(self, event, global_vars):
             else:
                 labels1=labels1+[df1.index[i]]
             
-        fig, (ax1,ax2) = plt.subplots(1,2,figsize=(10,7)) #ax1,ax2 refer to your two pies
+        fig, (ax1,ax2) = plt.subplots(1,2,figsize=(9,7)) #ax1,ax2 refer to your two pies
         w1,l1,p1 = ax1.pie(df1.pct1,labels=labels1,autopct = '%1.1f%%', startangle=90, pctdistance=1) #plot first pie
         pctdists = [0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.3, 0.3]
         for t,d in zip(p1, pctdists):
@@ -230,7 +296,7 @@ def display_chart(self, event, global_vars):
         miny = min(df['ETR'].min(), df['ETR_ref'].min()) 
         d = (maxy - miny)/10
         df = df.reset_index()
-        fig, ax = plt.subplots(figsize=(10, 8))
+        fig, ax = plt.subplots(figsize=(9, 7))
         ax=df.plot(kind="line", x='index', y=['ETR', 'ETR_ref'], color=["r", "b"], label=["ETR "+str(start_year), "ETR Under Reform "+str(start_year)]) 
         ax.set_ylim([miny - d, maxy + d])
         #col = ['r', 'b', 'y', 'c', 'm', 'k', 'g', 'r', 'b', 'y']

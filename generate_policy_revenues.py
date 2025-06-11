@@ -330,7 +330,8 @@ def generate_policy_revenues():
             df_tax2[tax_type][year]={}
             calc1.advance_to_year(year)
             calc1.calc_all()
-            revenue_dict = weighted_total_tax(calc1, tax_list, 'current_law', year, revenue_dict, GDP_Nominal, attribute_var)              
+            revenue_dict = weighted_total_tax(calc1, tax_list, 'current_law', year, revenue_dict, GDP_Nominal, attribute_var)
+                       
             if verbose:
                 print(f'TAX COLLECTION FOR THE YEAR - {year} \n')        
                 screen_print(tax_list, 'current_law', year, revenue_dict, 'value_bill', 'Collection')
@@ -514,9 +515,8 @@ def generate_policy_revenues():
                 if verbose:
                     screen_print(tax_list, 'reform_behavior', year, revenue_dict, 
                                  'value_bill_diff', 'Collection difference with Behavioral Adjustment')
-              
         df = dict_to_df(revenue_dict, tax_type, adjust_behavior)
-      
+        print('revenue_dict is ', revenue_dict)
         #Note that from previous step the row_num has been increased by 1 - 
         #Thus after first row containing headers, output of display_table was 2 - thus row_num for first loop with year 2022 is 2.
         #After the first loop with year=2022, output of display_table is 3 and so on
@@ -540,17 +540,28 @@ def generate_policy_revenues():
                 
                 #display_table(window, header=True) - display the headers i.e. Year, Current Law, Reform, Difference
                 header = ["header","Year", "Current Law", "Reform", "Diff"]
-                    
+                              
                 if global_variables[tax_type+'_adjust_behavior']:
                     header = header + ['Reform (Behavior)', "Diff"]
                 title_header[tax_type] = [["title", tax_type.upper()+" Projections (billions)"], header]
                 if percent_gdp:
                     title_header[tax_type] = [["title", tax_type.upper()+" Projections (% of GDP)"], header]
                 row_num[tax_type] = display_table(window_dict[tax_type], data=title_header[tax_type], header=True)
-                
                 row_num[tax_type] = display_table(window_dict[tax_type], row = row_num[tax_type], dataframe=df)
+                print('row_num is', row_num[tax_type])
                         
     print('df_tax1', df_tax1)
+    merged_dftax = pd.merge(df_tax1[tax_type][start_year]['All'], df_tax2[tax_type][start_year]['All'], on=['id_n', 'sector', 'weight'], how='left')
+    merged_dftax = merged_dftax[merged_dftax['adjusted_profit_x'] >= 0]
+    print('merged dftax', merged_dftax)
+    merged_dftax = merged_dftax.groupby('sector').sum()
+    merged_dftax['Current Law'] = merged_dftax['citax_x']/merged_dftax['adjusted_profit_x']
+    merged_dftax['Reform'] = merged_dftax['citax_y']/merged_dftax['adjusted_profit_y']
+    merged_dftax = merged_dftax.drop(columns=['id_n','weight', 'adjusted_profit_x', 'adjusted_profit_y', 'citax_x', 'citax_y'])
+    sector_name = ['Agriculture', 'Service', 'Manufacturing', 'Mining', 'Insurance']
+    merged_dftax.insert(0, 'Sector', sector_name)
+    merged_dftax.to_csv('cit_distribution_table_sector_etr.csv', index=False)
+    
     for year in range(data_start_year, data_start_year+2):
         dfcalc1 = data['calc1'].get(year)     
         dfcalc1.to_csv('outputcalc1'+ '{}'.format(year) + '.csv', index=False)
@@ -655,7 +666,7 @@ def generate_policy_revenues():
             #to cover year from start to end year
             for year in range(start_year, end_year+1):
                 dt[attribute_value]=dt[attribute_value].join(dt2[tax_type][year][attribute_value][['weight_ref_'+str(year), tax_collection_var[tax_type]+'_ref_'+str(year), income_measure[tax_type]+'_ref_'+str(year)]])     
-        #print('dt', dt)
+        #print('dt by sector is ', dt)
         return dt 
         
     print('revenue_dict', revenue_dict)
@@ -677,7 +688,13 @@ def generate_policy_revenues():
                     revenue_dict_df[k]['reform_behavior_'+k1] = revenue_dict[tax_type][k]['reform_behavior']['value_bill_str'][k1]
                     
         df[tax_type] = pd.DataFrame.from_dict(revenue_dict_df)
-        print(df[tax_type], 'df tax_type')
+        print('df tax type is', df[tax_type])
+        dft = df[tax_type][start_year]
+        print(dft.shape)
+        data = {'Sector': ['Agriculture', 'Service', 'Manufacturing', 'Mining', 'Insurance'], 'Current Law': [dft[2], dft[4], dft[6], dft[8], dft[10]],
+                'Reform': [dft[3], dft[5], dft[7], dft[9], dft[11]]}
+        df_sector = pd.DataFrame(data, index=None)
+        print(df_sector, 'df sector')
         df_str = df[tax_type].to_string()
         df_reform = pd.DataFrame.from_dict(reform)
         df_reform_str = df_reform.to_string()
@@ -751,9 +768,10 @@ def generate_policy_revenues():
         # dt_percentile['All']['ETR'] = min(max(dt_percentile['All']['ETR'], 0), 0.3)
         # dt_percentile['All']['ETR_ref'] = min(max(dt_percentile['All']['ETR_ref'], 0), 0.3)
         # Adjust this for number of years selected
-        
+        print('df tax1 is ', df_tax1[tax_type][start_year]['All'])
         filename1 = tax_type+'_distribution_table_sector'
-        text_output1 = df_tax1[tax_type][start_year]['All'].to_string() + '\n\n'
+        #text_output1 = df_tax1[tax_type][start_year]['All'].to_string() + '\n\n'
+        text_output1 = df_sector.to_string() + '\n\n'
         filename2 = tax_type+'_distribution_table'
         text_output2 = dt12['All'].to_string() + '\n\n'
         filename3 = tax_type+'_distribution_table_top1'
@@ -761,7 +779,8 @@ def generate_policy_revenues():
         filename4 = tax_type+'_distribution_table_income_bins'
         text_output4 = dt34['All'].to_string() + '\n\n'
     
-        write_file(df_tax2[tax_type][start_year]['All'], text_output1, filename1)
+        #write_file(df_tax2[tax_type][start_year]['All'], text_output1, filename1)
+        write_file(df_sector, text_output1, filename1)
         write_file(dt_tax_all12, text_output2, filename2)
         write_file(dt_tax_all12, text_output3, filename3)
         write_file(dt_tax_all34, text_output4, filename4)
@@ -785,7 +804,8 @@ def generate_policy_revenues():
                             header1, header2]
             row_num[tax_type] = display_table(window_dist[tax_type], data=title_header, header=True)
             row_num[tax_type] = display_table(window_dist[tax_type], row = row_num[tax_type], dataframe=dt_tax_all34)
-            l = tk.Button(window_dist[tax_type],text="Save Results",command=lambda: write_file(dt_tax_all34, text_output4, filename4, window_dist[tax_type], row_num[tax_type]))
+            l = tk.Button(window_dist[tax_type],text="Save Results",command=lambda: write_file(dt_tax_all34, text_output4, filename4, window_dist[tax_type], 
+                                                                                               [tax_type]))
             l.grid(row=row_num[tax_type]+2, column=2, pady = 10, sticky=tk.W)
     
         elif global_variables[tax_type+'_display_distribution_table_bydecile']:
@@ -819,7 +839,8 @@ def generate_policy_revenues():
             chart_list = chart_list + [tax_type+'_distribution_table']
             chart_list = chart_list + [tax_type+'_distribution_table_top1']
             chart_list = chart_list + [tax_type+'_distribution_table_income_bins']
-            #chart_list = chart_list + [tax_type+'_distribution_table_sector']
+            chart_list = chart_list + [tax_type+'_distribution_table_sector']
+            chart_list = chart_list + [tax_type+'_distribution_table_sector_etr']
             chart_list = chart_list + [tax_type+'_etr']
             #global_variables['kakwani_list'+tax_type] = kakwani_list[tax_type]
             global_variables['kakwani_list'] = kakwani_list
